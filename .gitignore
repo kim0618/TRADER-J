@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+data/portfolio.json
+data/cycle_info.json
+data/trades_*.csv
+data/ohlcv/
+logs/
+.env
