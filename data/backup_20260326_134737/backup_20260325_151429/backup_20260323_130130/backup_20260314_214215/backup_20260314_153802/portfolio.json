@@ -1,0 +1,37 @@
+{
+  "cash": 274630.58946811873,
+  "positions": {
+    "RENDER": {
+      "quantity": 88.15386305188484,
+      "avg_buy_price": 2640.27,
+      "total_invested": 233333.3333333333,
+      "buy_count": 1,
+      "buy_time": "2026-03-14T13:22:33.309405",
+      "last_buy_time": "2026-03-14T13:22:33.309405",
+      "peak_price": 2658.0
+    },
+    "VIRTUAL": {
+      "quantity": 217.29226299505757,
+      "avg_buy_price": 1071.138,
+      "total_invested": 233333.3333333333,
+      "buy_count": 1,
+      "buy_time": "2026-03-14T13:22:33.566967",
+      "last_buy_time": "2026-03-14T13:22:33.566967",
+      "peak_price": 1072.0
+    },
+    "ENSO": {
+      "quantity": 119.12073289318796,
+      "avg_buy_price": 1953.9,
+      "total_invested": 233333.3333333333,
+      "buy_count": 1,
+      "buy_time": "2026-03-14T13:58:48.096663",
+      "last_buy_time": "2026-03-14T13:58:48.096663",
+      "peak_price": 1985.0
+    }
+  },
+  "buy_orders": 13,
+  "sell_orders": 7,
+  "closed_trades": 7,
+  "win_trades": 1,
+  "total_profit": -20761.077198548242
+}

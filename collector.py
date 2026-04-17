@@ -2,9 +2,12 @@
 import requests
 import pandas as pd
 import time
-from config import CANDLE_INTERVAL, CANDLE_COUNT
+from config import CANDLE_INTERVAL, CANDLE_COUNT, BLACKLIST, MIN_PRICE_FILTER
 
 BITHUMB_API_URL = "https://api.bithumb.com/public"
+
+# ★ 추가: 종목 선정 캐시 (5분간 유지, API 과호출 방지)
+_ticker_cache = {"tickers": [], "timestamp": 0}
 
 def get_all_tickers():
     """전체 종목 시세 데이터"""
@@ -63,25 +66,34 @@ def get_rsi(coin):
 
 def get_smart_tickers(limit=2):
     """
-    전략과 일치하는 종목 선정
+    전략과 일치하는 종목 선정 (★ 5분 캐싱 적용)
 
     [핵심 원칙]
     RSI + BB 저점 매수 전략 사용 중
     → 선정 기준도 저점 종목으로 맞춰야 함
 
     [선정 기준]
-    1. 거래금액 50억 이상 (유동성 확보)
-    2. 급락 종목 제외 (-15% 이하)
-    3. 급등 종목 제외 (+15% 이상) → 이미 고점
-    4. RSI 계산해서 55 이하 종목만 (아직 안 오른 것)
-    5. 52주 하단 50% 이내 (저점 구간)
+    1. 블랙리스트 제외 (스테이블코인, 래핑 토큰 등)
+    2. 최소 가격 필터 (극소형 저가 코인 제외)
+    3. 거래금액 50억 이상 (유동성 확보)
+    4. 급락 종목 제외 (-15% 이하)
+    5. 급등 종목 제외 (+15% 이상)
+    6. RSI 60 이하 종목만 (아직 안 오른 것)
+    7. 24시간 가격 범위 상단 70% 이하
 
     [점수 계산]
-    RSI 낮을수록   +40점 (가장 중요)
-    52주 하단 근처 +30점
-    거래금액 많을수록 +20점
-    변동률 적당히   +10점
+    RSI 낮을수록       +40점 (가장 중요)
+    24h 범위 하단 근처 +30점
+    거래금액 많을수록   +20점
+    변동률 적당히       +10점
     """
+    global _ticker_cache
+    # ★ 5분 이내 캐시가 있으면 API 호출 생략
+    if time.time() - _ticker_cache["timestamp"] < 300 and len(_ticker_cache["tickers"]) >= limit:
+        cached = _ticker_cache["tickers"][:limit]
+        print(f"  └ 📦 캐시 사용 (API 생략): {cached}")
+        return cached
+
     try:
         tickers = get_all_tickers()
         if not tickers:
@@ -92,14 +104,18 @@ def get_smart_tickers(limit=2):
         print(f"\n  🌍 BTC 시장 추세: {btc_trend} ({btc_change:+.2f}%)")
 
         # BTC 급락장이면 전체 매수 보류
-        if btc_trend == "DOWN" and btc_change <= -3.0:
-            print(f"  ⚠️ BTC 급락장 (-3% 이하), 안전 종목으로 대체")
+        if btc_trend == "DOWN" and btc_change <= -2.0:  # ★ -3%→-2%
+            print(f"  ⚠️ BTC 급락장 (-2% 이하), 안전 종목으로 대체")
             return get_top_volume_tickers(limit)
 
         candidates = []
 
         for coin, data in tickers.items():
             try:
+                # 블랙리스트 필터 (스테이블코인 등)
+                if coin in BLACKLIST:
+                    continue
+
                 current_price = float(data.get("closing_price", 0))
                 value_24h = float(data.get("acc_trade_value_24H", 0))
                 change_rate = float(data.get("fluctate_rate_24H", 0))
@@ -110,24 +126,28 @@ def get_smart_tickers(limit=2):
                 if current_price <= 0 or value_24h <= 0:
                     continue
 
-                # 필터 1 - 거래금액 50억 이상 (유동성)
+                # 최소 가격 필터 (극소형 저가 코인 제외)
+                if current_price < MIN_PRICE_FILTER:
+                    continue
+
+                # 거래금액 50억 이상 (유동성)
                 if value_24h < 5_000_000_000:
                     continue
 
-                # 필터 2 - 급락 종목 제외 (상폐 위험)
-                if change_rate < -15.0:
+                # 급락 종목 제외 (구조적 하락 위험, -8%→-5%)
+                if change_rate < -5.0:
                     continue
 
-                # 필터 3 - 급등 종목 제외 (이미 고점)
+                # 급등 종목 제외 (이미 고점)
                 if change_rate > 15.0:
                     continue
 
-                # 필터 4 - 52주 위치 계산
+                # 24시간 가격 범위 내 위치 계산
                 price_position = 0.5  # 기본값
                 if max_price > min_price:
                     price_position = (current_price - min_price) / (max_price - min_price)
 
-                # 52주 상단 70% 이상이면 제외 (과열)
+                # 상단 70% 이상이면 제외 (과열)
                 if price_position > 0.7:
                     continue
 
@@ -158,8 +178,8 @@ def get_smart_tickers(limit=2):
             c["rsi"] = rsi
             time.sleep(0.1)  # API 과부하 방지
 
-        # RSI 55 초과 종목 제외 (이미 오른 종목)
-        top_candidates = [c for c in top_candidates if c["rsi"] <= 55]
+        # RSI 50 초과 종목 제외 (이미 오른 종목, 60→50)
+        top_candidates = [c for c in top_candidates if c["rsi"] <= 50]
 
         if not top_candidates:
             print("  ⚠️ RSI 조건 충족 종목 없음, 거래량 기준으로 대체")
@@ -185,10 +205,10 @@ def get_smart_tickers(limit=2):
             else:
                 score += 5       # RSI 50~55
 
-            # 2. 52주 하단 근처일수록 높은 점수 (30점)
+            # 2. 24h 범위 하단 근처일수록 높은 점수 (30점)
             pos = c["price_position"]
             if pos <= 0.1:
-                score += 30      # 52주 최저점 근처
+                score += 30      # 24h 최저점 근처
             elif pos <= 0.2:
                 score += 25
             elif pos <= 0.3:
@@ -245,6 +265,9 @@ def get_smart_tickers(limit=2):
                     break
 
         print(f"\n  ✅ 최종 선정: {selected}")
+        # ★ 캐시 저장
+        _ticker_cache["tickers"] = selected
+        _ticker_cache["timestamp"] = time.time()
         return selected[:limit]
 
     except Exception as e:
@@ -260,7 +283,10 @@ def get_top_volume_tickers(limit=2):
             key=lambda x: float(x[1].get('acc_trade_value_24H', 0)),
             reverse=True
         )
-        return [item[0] for item in sorted_tickers[:limit]]
+        filtered = [item[0] for item in sorted_tickers
+                     if item[0] not in BLACKLIST
+                     and float(item[1].get('closing_price', 0)) >= MIN_PRICE_FILTER]
+        return filtered[:limit]
     except Exception as e:
         print(f"[오류] 거래량 상위 종목 조회 실패: {e}")
     return ["BTC", "XRP"]

@@ -1,0 +1,2730 @@
+{
+  "summary": {
+    "symbols": [
+      "A8",
+      "ACX",
+      "ADA",
+      "ATH",
+      "AXS",
+      "BERA",
+      "BLAST",
+      "BSV",
+      "BTC",
+      "BTR",
+      "C",
+      "CAMP",
+      "CFG",
+      "COS",
+      "CUDIS",
+      "DAO",
+      "DEEP",
+      "DKA",
+      "DOGE",
+      "DOOD",
+      "DOT",
+      "EDGE",
+      "ENA",
+      "ENSO",
+      "EPT",
+      "ETH",
+      "F",
+      "FANC",
+      "G",
+      "GAS",
+      "GTC",
+      "GWEI",
+      "H",
+      "HAEDAL",
+      "HOOK",
+      "HUMA",
+      "ICP",
+      "ICX",
+      "IP",
+      "KAIA",
+      "KITE",
+      "LA",
+      "LISTA",
+      "MBX",
+      "ME",
+      "MOODENG",
+      "NEO",
+      "OGN",
+      "OXT",
+      "PENGU",
+      "PEPE",
+      "PLUME",
+      "POLA",
+      "PONKE",
+      "RECALL",
+      "RENDER",
+      "RESOLV",
+      "REZ",
+      "SAHARA",
+      "SHELL",
+      "SHIB",
+      "SIGN",
+      "SOL",
+      "SOLV",
+      "STEEM",
+      "SUI",
+      "SUNDOG",
+      "SXT",
+      "TAO",
+      "TAVA",
+      "THE",
+      "TOWNS",
+      "TRUMP",
+      "TURBO",
+      "VIRTUAL",
+      "WLD",
+      "WLFI",
+      "XAI",
+      "XAN",
+      "XCN",
+      "XLM",
+      "XRP",
+      "XVS"
+    ],
+    "total_pnl": -441577.01,
+    "avg_win_rate": 45.66,
+    "worst_mdd": -12.58,
+    "result_count": 83,
+    "skipped": {
+      "CYS": "1시간봉 부족 (47개)"
+    },
+    "generated_at": "2026-03-17T10:24:07.058261",
+    "days": null,
+    "start": null,
+    "end": null
+  },
+  "results": {
+    "A8": {
+      "symbol": "A8",
+      "final_balance": 978306.18,
+      "total_pnl": -14610.49,
+      "total_pnl_rate": -1.46,
+      "total_trades": 14,
+      "win_rate": 50.0,
+      "avg_profit": 6368.67,
+      "avg_loss": -8455.88,
+      "total_fee": 14130.05,
+      "mdd": -5.07,
+      "profit_factor": 0.753,
+      "reason_counts": {
+        "횡보정리": 3,
+        "동적익절": 3,
+        "손절": 5,
+        "전략매도": 2,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 4.5,
+      "dca_stats": {
+        "1": {
+          "count": 8,
+          "win_rate": 75.0,
+          "total_pnl": 31006.13
+        },
+        "2": {
+          "count": 6,
+          "win_rate": 16.67,
+          "total_pnl": -45616.61
+        }
+      }
+    },
+    "ACX": {
+      "symbol": "ACX",
+      "final_balance": 1020859.99,
+      "total_pnl": 32109.99,
+      "total_pnl_rate": 3.21,
+      "total_trades": 22,
+      "win_rate": 68.18,
+      "avg_profit": 7145.96,
+      "avg_loss": -10725.64,
+      "total_fee": 22580.48,
+      "mdd": -5.21,
+      "profit_factor": 1.428,
+      "reason_counts": {
+        "손절": 7,
+        "동적익절": 10,
+        "횡보정리": 2,
+        "전략매도": 3
+      },
+      "avg_holding_hours": 5.7,
+      "dca_stats": {
+        "1": {
+          "count": 12,
+          "win_rate": 91.67,
+          "total_pnl": 70939.68
+        },
+        "2": {
+          "count": 10,
+          "win_rate": 40.0,
+          "total_pnl": -38829.69
+        }
+      }
+    },
+    "ADA": {
+      "symbol": "ADA",
+      "final_balance": 946600.0,
+      "total_pnl": -36941.67,
+      "total_pnl_rate": -3.69,
+      "total_trades": 33,
+      "win_rate": 39.39,
+      "avg_profit": 2519.53,
+      "avg_loss": -3484.78,
+      "total_fee": 32824.08,
+      "mdd": -5.79,
+      "profit_factor": 0.47,
+      "reason_counts": {
+        "전략매도": 26,
+        "횡보정리": 3,
+        "손절": 3,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 7.92,
+      "dca_stats": {
+        "1": {
+          "count": 20,
+          "win_rate": 55.0,
+          "total_pnl": 12281.18
+        },
+        "2": {
+          "count": 13,
+          "win_rate": 15.38,
+          "total_pnl": -49222.85
+        }
+      }
+    },
+    "ATH": {
+      "symbol": "ATH",
+      "final_balance": 988068.4,
+      "total_pnl": -8181.6,
+      "total_pnl_rate": -0.82,
+      "total_trades": 7,
+      "win_rate": 57.14,
+      "avg_profit": 2309.82,
+      "avg_loss": -5806.96,
+      "total_fee": 7479.49,
+      "mdd": -2.63,
+      "profit_factor": 0.53,
+      "reason_counts": {
+        "전략매도": 4,
+        "트레일링스탑": 1,
+        "횡보정리": 1,
+        "손절": 1
+      },
+      "avg_holding_hours": 7.85,
+      "dca_stats": {
+        "1": {
+          "count": 3,
+          "win_rate": 100.0,
+          "total_pnl": 6364.27
+        },
+        "2": {
+          "count": 4,
+          "win_rate": 25.0,
+          "total_pnl": -14545.87
+        }
+      }
+    },
+    "AXS": {
+      "symbol": "AXS",
+      "final_balance": 1009781.43,
+      "total_pnl": 12698.1,
+      "total_pnl_rate": 1.27,
+      "total_trades": 6,
+      "win_rate": 50.0,
+      "avg_profit": 5446.75,
+      "avg_loss": -1214.05,
+      "total_fee": 5865.16,
+      "mdd": -1.28,
+      "profit_factor": 4.486,
+      "reason_counts": {
+        "전략매도": 4,
+        "동적익절": 1,
+        "횡보정리": 1
+      },
+      "avg_holding_hours": 5.51,
+      "dca_stats": {
+        "1": {
+          "count": 4,
+          "win_rate": 75.0,
+          "total_pnl": 15362.72
+        },
+        "2": {
+          "count": 2,
+          "win_rate": 0.0,
+          "total_pnl": -2664.62
+        }
+      }
+    },
+    "BERA": {
+      "symbol": "BERA",
+      "final_balance": 998717.56,
+      "total_pnl": 2050.9,
+      "total_pnl_rate": 0.21,
+      "total_trades": 6,
+      "win_rate": 83.33,
+      "avg_profit": 2658.38,
+      "avg_loss": -11240.98,
+      "total_fee": 6671.81,
+      "mdd": -1.32,
+      "profit_factor": 1.182,
+      "reason_counts": {
+        "전략매도": 5,
+        "손절": 1
+      },
+      "avg_holding_hours": 7.15,
+      "dca_stats": {
+        "1": {
+          "count": 2,
+          "win_rate": 100.0,
+          "total_pnl": 5510.28
+        },
+        "2": {
+          "count": 4,
+          "win_rate": 75.0,
+          "total_pnl": -3459.38
+        }
+      }
+    },
+    "BLAST": {
+      "symbol": "BLAST",
+      "final_balance": 998966.25,
+      "total_pnl": 3341.25,
+      "total_pnl_rate": 0.33,
+      "total_trades": 8,
+      "win_rate": 37.5,
+      "avg_profit": 8049.93,
+      "avg_loss": -4161.71,
+      "total_fee": 8758.37,
+      "mdd": -2.26,
+      "profit_factor": 1.161,
+      "reason_counts": {
+        "횡보정리": 2,
+        "전략매도": 2,
+        "동적익절": 2,
+        "손절": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 6.33,
+      "dca_stats": {
+        "1": {
+          "count": 3,
+          "win_rate": 66.67,
+          "total_pnl": 9967.08
+        },
+        "2": {
+          "count": 5,
+          "win_rate": 20.0,
+          "total_pnl": -6625.83
+        }
+      }
+    },
+    "BSV": {
+      "symbol": "BSV",
+      "final_balance": 989632.94,
+      "total_pnl": -8700.4,
+      "total_pnl_rate": -0.87,
+      "total_trades": 3,
+      "win_rate": 33.33,
+      "avg_profit": 6402.99,
+      "avg_loss": -7551.69,
+      "total_fee": 3311.53,
+      "mdd": -2.33,
+      "profit_factor": 0.424,
+      "reason_counts": {
+        "전략매도": 1,
+        "손절": 1,
+        "횡보정리": 1
+      },
+      "avg_holding_hours": 7.58,
+      "dca_stats": {
+        "1": {
+          "count": 1,
+          "win_rate": 100.0,
+          "total_pnl": 6402.99
+        },
+        "2": {
+          "count": 2,
+          "win_rate": 0.0,
+          "total_pnl": -15103.39
+        }
+      }
+    },
+    "BTC": {
+      "symbol": "BTC",
+      "final_balance": 981681.18,
+      "total_pnl": -2277.15,
+      "total_pnl_rate": -0.23,
+      "total_trades": 35,
+      "win_rate": 45.71,
+      "avg_profit": 1667.54,
+      "avg_loss": -1524.09,
+      "total_fee": 32077.63,
+      "mdd": -2.47,
+      "profit_factor": 0.921,
+      "reason_counts": {
+        "전략매도": 29,
+        "횡보정리": 5,
+        "동적익절": 1
+      },
+      "avg_holding_hours": 7.78,
+      "dca_stats": {
+        "1": {
+          "count": 28,
+          "win_rate": 50.0,
+          "total_pnl": 14052.56
+        },
+        "2": {
+          "count": 7,
+          "win_rate": 28.57,
+          "total_pnl": -16329.71
+        }
+      }
+    },
+    "BTR": {
+      "symbol": "BTR",
+      "final_balance": 937767.11,
+      "total_pnl": -49316.23,
+      "total_pnl_rate": -4.93,
+      "total_trades": 27,
+      "win_rate": 44.44,
+      "avg_profit": 3049.64,
+      "avg_loss": -5727.46,
+      "total_fee": 25709.73,
+      "mdd": -7.08,
+      "profit_factor": 0.426,
+      "reason_counts": {
+        "전략매도": 11,
+        "손절": 7,
+        "횡보정리": 6,
+        "동적익절": 2,
+        "트레일링스탑": 1
+      },
+      "avg_holding_hours": 7.02,
+      "dca_stats": {
+        "1": {
+          "count": 19,
+          "win_rate": 52.63,
+          "total_pnl": -19338.45
+        },
+        "2": {
+          "count": 8,
+          "win_rate": 25.0,
+          "total_pnl": -29977.78
+        }
+      }
+    },
+    "C": {
+      "symbol": "C",
+      "final_balance": 956776.83,
+      "total_pnl": -34056.5,
+      "total_pnl_rate": -3.41,
+      "total_trades": 17,
+      "win_rate": 47.06,
+      "avg_profit": 7243.48,
+      "avg_loss": -10222.71,
+      "total_fee": 18247.98,
+      "mdd": -8.91,
+      "profit_factor": 0.63,
+      "reason_counts": {
+        "동적익절": 6,
+        "횡보정리": 1,
+        "손절": 9,
+        "트레일링스탑": 1
+      },
+      "avg_holding_hours": 2.11,
+      "dca_stats": {
+        "1": {
+          "count": 7,
+          "win_rate": 71.43,
+          "total_pnl": 21509.56
+        },
+        "2": {
+          "count": 10,
+          "win_rate": 30.0,
+          "total_pnl": -55566.06
+        }
+      }
+    },
+    "CAMP": {
+      "symbol": "CAMP",
+      "final_balance": 1052513.33,
+      "total_pnl": 56054.99,
+      "total_pnl_rate": 5.61,
+      "total_trades": 7,
+      "win_rate": 71.43,
+      "avg_profit": 12198.66,
+      "avg_loss": -2469.14,
+      "total_fee": 7223.82,
+      "mdd": -0.9,
+      "profit_factor": 12.351,
+      "reason_counts": {
+        "횡보정리": 2,
+        "동적익절": 3,
+        "전략매도": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 6.1,
+      "dca_stats": {
+        "1": {
+          "count": 4,
+          "win_rate": 50.0,
+          "total_pnl": 32134.22
+        },
+        "2": {
+          "count": 3,
+          "win_rate": 100.0,
+          "total_pnl": 23920.77
+        }
+      }
+    },
+    "CFG": {
+      "symbol": "CFG",
+      "final_balance": 1032721.68,
+      "total_pnl": 36055.01,
+      "total_pnl_rate": 3.61,
+      "total_trades": 7,
+      "win_rate": 28.57,
+      "avg_profit": 35986.31,
+      "avg_loss": -7183.52,
+      "total_fee": 6757.03,
+      "mdd": -2.51,
+      "profit_factor": 2.004,
+      "reason_counts": {
+        "횡보정리": 1,
+        "동적익절": 2,
+        "손절": 3,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 2.4,
+      "dca_stats": {
+        "1": {
+          "count": 5,
+          "win_rate": 40.0,
+          "total_pnl": 58731.41
+        },
+        "2": {
+          "count": 2,
+          "win_rate": 0.0,
+          "total_pnl": -22676.39
+        }
+      }
+    },
+    "COS": {
+      "symbol": "COS",
+      "final_balance": 983753.0,
+      "total_pnl": -6872.0,
+      "total_pnl_rate": -0.69,
+      "total_trades": 18,
+      "win_rate": 44.44,
+      "avg_profit": 9280.88,
+      "avg_loss": -8111.9,
+      "total_fee": 18732.78,
+      "mdd": -3.29,
+      "profit_factor": 0.915,
+      "reason_counts": {
+        "전략매도": 3,
+        "동적익절": 6,
+        "손절": 8,
+        "트레일링스탑": 1
+      },
+      "avg_holding_hours": 2.56,
+      "dca_stats": {
+        "1": {
+          "count": 9,
+          "win_rate": 55.56,
+          "total_pnl": 13324.36
+        },
+        "2": {
+          "count": 9,
+          "win_rate": 33.33,
+          "total_pnl": -20196.36
+        }
+      }
+    },
+    "CUDIS": {
+      "symbol": "CUDIS",
+      "final_balance": 1022788.85,
+      "total_pnl": 27997.18,
+      "total_pnl_rate": 2.8,
+      "total_trades": 11,
+      "win_rate": 63.64,
+      "avg_profit": 7652.48,
+      "avg_loss": -6392.54,
+      "total_fee": 10486.84,
+      "mdd": -1.5,
+      "profit_factor": 2.095,
+      "reason_counts": {
+        "동적익절": 5,
+        "트레일링스탑": 1,
+        "손절": 3,
+        "전략매도": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 2.91,
+      "dca_stats": {
+        "1": {
+          "count": 8,
+          "win_rate": 62.5,
+          "total_pnl": 14963.5
+        },
+        "2": {
+          "count": 3,
+          "win_rate": 66.67,
+          "total_pnl": 13033.68
+        }
+      }
+    },
+    "DAO": {
+      "symbol": "DAO",
+      "final_balance": 1004499.33,
+      "total_pnl": 5541.0,
+      "total_pnl_rate": 0.55,
+      "total_trades": 2,
+      "win_rate": 50.0,
+      "avg_profit": 7251.6,
+      "avg_loss": -1710.6,
+      "total_fee": 2097.22,
+      "mdd": -0.63,
+      "profit_factor": 4.239,
+      "reason_counts": {
+        "전략매도": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 5.04,
+      "dca_stats": {
+        "1": {
+          "count": 1,
+          "win_rate": 0.0,
+          "total_pnl": -1710.6
+        },
+        "2": {
+          "count": 1,
+          "win_rate": 100.0,
+          "total_pnl": 7251.6
+        }
+      }
+    },
+    "DEEP": {
+      "symbol": "DEEP",
+      "final_balance": 1009773.21,
+      "total_pnl": 21648.21,
+      "total_pnl_rate": 2.16,
+      "total_trades": 23,
+      "win_rate": 65.22,
+      "avg_profit": 5116.33,
+      "avg_loss": -6887.08,
+      "total_fee": 23804.26,
+      "mdd": -1.91,
+      "profit_factor": 1.393,
+      "reason_counts": {
+        "손절": 4,
+        "동적익절": 7,
+        "전략매도": 8,
+        "횡보정리": 3,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 7.67,
+      "dca_stats": {
+        "1": {
+          "count": 12,
+          "win_rate": 83.33,
+          "total_pnl": 44037.28
+        },
+        "2": {
+          "count": 11,
+          "win_rate": 45.45,
+          "total_pnl": -22389.08
+        }
+      }
+    },
+    "DKA": {
+      "symbol": "DKA",
+      "final_balance": 1004516.93,
+      "total_pnl": 8266.93,
+      "total_pnl_rate": 0.83,
+      "total_trades": 7,
+      "win_rate": 42.86,
+      "avg_profit": 11225.05,
+      "avg_loss": -6352.06,
+      "total_fee": 7520.72,
+      "mdd": -1.84,
+      "profit_factor": 1.325,
+      "reason_counts": {
+        "전략매도": 1,
+        "동적익절": 3,
+        "손절": 2,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 4.14,
+      "dca_stats": {
+        "1": {
+          "count": 3,
+          "win_rate": 66.67,
+          "total_pnl": 19731.64
+        },
+        "2": {
+          "count": 4,
+          "win_rate": 25.0,
+          "total_pnl": -11464.71
+        }
+      }
+    },
+    "DOGE": {
+      "symbol": "DOGE",
+      "final_balance": 966497.95,
+      "total_pnl": -22668.71,
+      "total_pnl_rate": -2.27,
+      "total_trades": 23,
+      "win_rate": 43.48,
+      "avg_profit": 3099.52,
+      "avg_loss": -4127.99,
+      "total_fee": 21609.85,
+      "mdd": -3.66,
+      "profit_factor": 0.578,
+      "reason_counts": {
+        "손절": 4,
+        "동적익절": 4,
+        "횡보정리": 10,
+        "전략매도": 5
+      },
+      "avg_holding_hours": 10.67,
+      "dca_stats": {
+        "1": {
+          "count": 17,
+          "win_rate": 58.82,
+          "total_pnl": 16155.69
+        },
+        "2": {
+          "count": 6,
+          "win_rate": 0.0,
+          "total_pnl": -38824.4
+        }
+      }
+    },
+    "DOOD": {
+      "symbol": "DOOD",
+      "final_balance": 1010498.99,
+      "total_pnl": 14457.33,
+      "total_pnl_rate": 1.45,
+      "total_trades": 8,
+      "win_rate": 62.5,
+      "avg_profit": 5769.84,
+      "avg_loss": -4797.29,
+      "total_fee": 7952.9,
+      "mdd": -1.54,
+      "profit_factor": 2.005,
+      "reason_counts": {
+        "동적익절": 4,
+        "횡보정리": 1,
+        "트레일링스탑": 1,
+        "전략매도": 1,
+        "손절": 1
+      },
+      "avg_holding_hours": 5.95,
+      "dca_stats": {
+        "1": {
+          "count": 5,
+          "win_rate": 80.0,
+          "total_pnl": 19487.75
+        },
+        "2": {
+          "count": 3,
+          "win_rate": 33.33,
+          "total_pnl": -5030.42
+        }
+      }
+    },
+    "DOT": {
+      "symbol": "DOT",
+      "final_balance": 1001965.87,
+      "total_pnl": 3632.54,
+      "total_pnl_rate": 0.36,
+      "total_trades": 3,
+      "win_rate": 33.33,
+      "avg_profit": 4193.06,
+      "avg_loss": -280.26,
+      "total_fee": 3342.44,
+      "mdd": -1.1,
+      "profit_factor": 7.481,
+      "reason_counts": {
+        "전략매도": 2,
+        "횡보정리": 1
+      },
+      "avg_holding_hours": 9.03,
+      "dca_stats": {
+        "1": {
+          "count": 1,
+          "win_rate": 0.0,
+          "total_pnl": -446.91
+        },
+        "2": {
+          "count": 2,
+          "win_rate": 50.0,
+          "total_pnl": 4079.45
+        }
+      }
+    },
+    "EDGE": {
+      "symbol": "EDGE",
+      "final_balance": 984969.78,
+      "total_pnl": -13988.56,
+      "total_pnl_rate": -1.4,
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "avg_profit": 0.0,
+      "avg_loss": -6994.28,
+      "total_fee": 2048.27,
+      "mdd": -1.85,
+      "profit_factor": 0.0,
+      "reason_counts": {
+        "손절": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 4.5,
+      "dca_stats": {
+        "1": {
+          "count": 1,
+          "win_rate": 0.0,
+          "total_pnl": -1077.64
+        },
+        "2": {
+          "count": 1,
+          "win_rate": 0.0,
+          "total_pnl": -12910.92
+        }
+      }
+    },
+    "ENA": {
+      "symbol": "ENA",
+      "final_balance": 992755.07,
+      "total_pnl": -5161.6,
+      "total_pnl_rate": -0.52,
+      "total_trades": 4,
+      "win_rate": 50.0,
+      "avg_profit": 3507.74,
+      "avg_loss": -6088.53,
+      "total_fee": 4153.73,
+      "mdd": -1.39,
+      "profit_factor": 0.576,
+      "reason_counts": {
+        "전략매도": 2,
+        "손절": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 4.46,
+      "dca_stats": {
+        "1": {
+          "count": 2,
+          "win_rate": 50.0,
+          "total_pnl": 3207.46
+        },
+        "2": {
+          "count": 2,
+          "win_rate": 50.0,
+          "total_pnl": -8369.06
+        }
+      }
+    },
+    "ENSO": {
+      "symbol": "ENSO",
+      "final_balance": 912054.29,
+      "total_pnl": -75029.04,
+      "total_pnl_rate": -7.5,
+      "total_trades": 24,
+      "win_rate": 37.5,
+      "avg_profit": 2721.63,
+      "avg_loss": -6634.92,
+      "total_fee": 25645.29,
+      "mdd": -8.85,
+      "profit_factor": 0.246,
+      "reason_counts": {
+        "손절": 7,
+        "트레일링스탑": 1,
+        "횡보정리": 3,
+        "전략매도": 11,
+        "동적익절": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 8.61,
+      "dca_stats": {
+        "1": {
+          "count": 10,
+          "win_rate": 70.0,
+          "total_pnl": 2926.15
+        },
+        "2": {
+          "count": 14,
+          "win_rate": 14.29,
+          "total_pnl": -77955.19
+        }
+      }
+    },
+    "EPT": {
+      "symbol": "EPT",
+      "final_balance": 993755.53,
+      "total_pnl": -3119.47,
+      "total_pnl_rate": -0.31,
+      "total_trades": 6,
+      "win_rate": 50.0,
+      "avg_profit": 3982.56,
+      "avg_loss": -5022.38,
+      "total_fee": 6242.18,
+      "mdd": -1.85,
+      "profit_factor": 0.793,
+      "reason_counts": {
+        "동적익절": 1,
+        "전략매도": 2,
+        "횡보정리": 2,
+        "손절": 1
+      },
+      "avg_holding_hours": 8.07,
+      "dca_stats": {
+        "1": {
+          "count": 3,
+          "win_rate": 66.67,
+          "total_pnl": -2336.48
+        },
+        "2": {
+          "count": 3,
+          "win_rate": 33.33,
+          "total_pnl": -782.99
+        }
+      }
+    },
+    "ETH": {
+      "symbol": "ETH",
+      "final_balance": 975283.57,
+      "total_pnl": -8258.1,
+      "total_pnl_rate": -0.83,
+      "total_trades": 33,
+      "win_rate": 42.42,
+      "avg_profit": 3005.95,
+      "avg_loss": -2649.54,
+      "total_fee": 32895.97,
+      "mdd": -4.08,
+      "profit_factor": 0.836,
+      "reason_counts": {
+        "횡보정리": 5,
+        "동적익절": 3,
+        "손절": 1,
+        "전략매도": 23,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 8.49,
+      "dca_stats": {
+        "1": {
+          "count": 20,
+          "win_rate": 65.0,
+          "total_pnl": 35760.78
+        },
+        "2": {
+          "count": 13,
+          "win_rate": 7.69,
+          "total_pnl": -44018.87
+        }
+      }
+    },
+    "F": {
+      "symbol": "F",
+      "final_balance": 953612.87,
+      "total_pnl": -37012.13,
+      "total_pnl_rate": -3.7,
+      "total_trades": 19,
+      "win_rate": 31.58,
+      "avg_profit": 2227.91,
+      "avg_loss": -3875.35,
+      "total_fee": 18657.24,
+      "mdd": -5.45,
+      "profit_factor": 0.265,
+      "reason_counts": {
+        "전략매도": 7,
+        "손절": 3,
+        "횡보정리": 8,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 9.73,
+      "dca_stats": {
+        "1": {
+          "count": 12,
+          "win_rate": 50.0,
+          "total_pnl": 2233.5
+        },
+        "2": {
+          "count": 7,
+          "win_rate": 0.0,
+          "total_pnl": -39245.63
+        }
+      }
+    },
+    "FANC": {
+      "symbol": "FANC",
+      "final_balance": 1016792.48,
+      "total_pnl": 20334.14,
+      "total_pnl_rate": 2.03,
+      "total_trades": 8,
+      "win_rate": 50.0,
+      "avg_profit": 10398.42,
+      "avg_loss": -5314.88,
+      "total_fee": 7134.3,
+      "mdd": -1.58,
+      "profit_factor": 1.956,
+      "reason_counts": {
+        "횡보정리": 1,
+        "손절": 2,
+        "동적익절": 3,
+        "전략매도": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 3.86,
+      "dca_stats": {
+        "1": {
+          "count": 7,
+          "win_rate": 57.14,
+          "total_pnl": 30361.48
+        },
+        "2": {
+          "count": 1,
+          "win_rate": 0.0,
+          "total_pnl": -10027.34
+        }
+      }
+    },
+    "G": {
+      "symbol": "G",
+      "final_balance": 1002438.32,
+      "total_pnl": 7021.66,
+      "total_pnl_rate": 0.7,
+      "total_trades": 10,
+      "win_rate": 60.0,
+      "avg_profit": 5517.51,
+      "avg_loss": -6520.85,
+      "total_fee": 9184.26,
+      "mdd": -3.23,
+      "profit_factor": 1.269,
+      "reason_counts": {
+        "횡보정리": 2,
+        "전략매도": 2,
+        "트레일링스탑": 1,
+        "동적익절": 2,
+        "손절": 2,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 4.13,
+      "dca_stats": {
+        "1": {
+          "count": 8,
+          "win_rate": 62.5,
+          "total_pnl": 16896.61
+        },
+        "2": {
+          "count": 2,
+          "win_rate": 50.0,
+          "total_pnl": -9874.95
+        }
+      }
+    },
+    "GAS": {
+      "symbol": "GAS",
+      "final_balance": 1001277.47,
+      "total_pnl": 3777.47,
+      "total_pnl_rate": 0.38,
+      "total_trades": 5,
+      "win_rate": 40.0,
+      "avg_profit": 4385.4,
+      "avg_loss": -1664.44,
+      "total_fee": 5009.47,
+      "mdd": -0.75,
+      "profit_factor": 1.757,
+      "reason_counts": {
+        "횡보정리": 3,
+        "전략매도": 1,
+        "동적익절": 1
+      },
+      "avg_holding_hours": 10.62,
+      "dca_stats": {
+        "1": {
+          "count": 3,
+          "win_rate": 66.67,
+          "total_pnl": 7839.46
+        },
+        "2": {
+          "count": 2,
+          "win_rate": 0.0,
+          "total_pnl": -4061.99
+        }
+      }
+    },
+    "GTC": {
+      "symbol": "GTC",
+      "final_balance": 975193.07,
+      "total_pnl": -22931.93,
+      "total_pnl_rate": -2.29,
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "avg_profit": 0.0,
+      "avg_loss": -7643.98,
+      "total_fee": 3692.53,
+      "mdd": -3.15,
+      "profit_factor": 0.0,
+      "reason_counts": {
+        "손절": 2,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 1.69,
+      "dca_stats": {
+        "2": {
+          "count": 3,
+          "win_rate": 0.0,
+          "total_pnl": -22931.93
+        }
+      }
+    },
+    "GWEI": {
+      "symbol": "GWEI",
+      "final_balance": 954902.58,
+      "total_pnl": -36555.75,
+      "total_pnl_rate": -3.66,
+      "total_trades": 16,
+      "win_rate": 37.5,
+      "avg_profit": 6120.81,
+      "avg_loss": -7328.06,
+      "total_fee": 16991.71,
+      "mdd": -8.24,
+      "profit_factor": 0.501,
+      "reason_counts": {
+        "전략매도": 4,
+        "손절": 7,
+        "횡보정리": 1,
+        "동적익절": 3,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 5.67,
+      "dca_stats": {
+        "1": {
+          "count": 7,
+          "win_rate": 57.14,
+          "total_pnl": 5139.61
+        },
+        "2": {
+          "count": 9,
+          "win_rate": 22.22,
+          "total_pnl": -41695.36
+        }
+      }
+    },
+    "H": {
+      "symbol": "H",
+      "final_balance": 919143.49,
+      "total_pnl": -62523.18,
+      "total_pnl_rate": -6.25,
+      "total_trades": 35,
+      "win_rate": 40.0,
+      "avg_profit": 5395.7,
+      "avg_loss": -6574.42,
+      "total_fee": 36509.97,
+      "mdd": -9.44,
+      "profit_factor": 0.547,
+      "reason_counts": {
+        "손절": 13,
+        "동적익절": 6,
+        "전략매도": 14,
+        "횡보정리": 2
+      },
+      "avg_holding_hours": 5.56,
+      "dca_stats": {
+        "1": {
+          "count": 17,
+          "win_rate": 58.82,
+          "total_pnl": 10379.83
+        },
+        "2": {
+          "count": 18,
+          "win_rate": 22.22,
+          "total_pnl": -72903.01
+        }
+      }
+    },
+    "HAEDAL": {
+      "symbol": "HAEDAL",
+      "final_balance": 987054.65,
+      "total_pnl": -6487.02,
+      "total_pnl_rate": -0.65,
+      "total_trades": 14,
+      "win_rate": 64.29,
+      "avg_profit": 2741.12,
+      "avg_loss": -6231.43,
+      "total_fee": 12900.41,
+      "mdd": -2.49,
+      "profit_factor": 0.792,
+      "reason_counts": {
+        "전략매도": 6,
+        "횡보정리": 5,
+        "손절": 2,
+        "동적익절": 1
+      },
+      "avg_holding_hours": 7.77,
+      "dca_stats": {
+        "1": {
+          "count": 11,
+          "win_rate": 81.82,
+          "total_pnl": 9642.46
+        },
+        "2": {
+          "count": 3,
+          "win_rate": 0.0,
+          "total_pnl": -16129.48
+        }
+      }
+    },
+    "HOOK": {
+      "symbol": "HOOK",
+      "final_balance": 1000338.31,
+      "total_pnl": 4713.31,
+      "total_pnl_rate": 0.47,
+      "total_trades": 8,
+      "win_rate": 50.0,
+      "avg_profit": 5169.01,
+      "avg_loss": -3990.69,
+      "total_fee": 8761.81,
+      "mdd": -2.59,
+      "profit_factor": 1.295,
+      "reason_counts": {
+        "동적익절": 2,
+        "전략매도": 2,
+        "트레일링스탑": 2,
+        "손절": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 5.89,
+      "dca_stats": {
+        "1": {
+          "count": 3,
+          "win_rate": 100.0,
+          "total_pnl": 13938.25
+        },
+        "2": {
+          "count": 5,
+          "win_rate": 20.0,
+          "total_pnl": -9224.94
+        }
+      }
+    },
+    "HUMA": {
+      "symbol": "HUMA",
+      "final_balance": 910757.3,
+      "total_pnl": -67784.36,
+      "total_pnl_rate": -6.78,
+      "total_trades": 40,
+      "win_rate": 42.5,
+      "avg_profit": 7625.46,
+      "avg_loss": -8583.36,
+      "total_fee": 42746.78,
+      "mdd": -10.83,
+      "profit_factor": 0.657,
+      "reason_counts": {
+        "손절": 17,
+        "동적익절": 10,
+        "전략매도": 7,
+        "횡보정리": 4,
+        "트레일링스탑": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 4.0,
+      "dca_stats": {
+        "1": {
+          "count": 17,
+          "win_rate": 70.59,
+          "total_pnl": 66739.4
+        },
+        "2": {
+          "count": 23,
+          "win_rate": 21.74,
+          "total_pnl": -134523.77
+        }
+      }
+    },
+    "ICP": {
+      "symbol": "ICP",
+      "final_balance": 993036.23,
+      "total_pnl": -5297.1,
+      "total_pnl_rate": -0.53,
+      "total_trades": 3,
+      "win_rate": 33.33,
+      "avg_profit": 1504.52,
+      "avg_loss": -3400.81,
+      "total_fee": 3320.06,
+      "mdd": -1.22,
+      "profit_factor": 0.221,
+      "reason_counts": {
+        "전략매도": 3
+      },
+      "avg_holding_hours": 4.83,
+      "dca_stats": {
+        "1": {
+          "count": 1,
+          "win_rate": 100.0,
+          "total_pnl": 1504.52
+        },
+        "2": {
+          "count": 2,
+          "win_rate": 0.0,
+          "total_pnl": -6801.63
+        }
+      }
+    },
+    "ICX": {
+      "symbol": "ICX",
+      "final_balance": 975473.86,
+      "total_pnl": -22859.48,
+      "total_pnl_rate": -2.29,
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "avg_profit": 0.0,
+      "avg_loss": -7619.83,
+      "total_fee": 3276.04,
+      "mdd": -2.79,
+      "profit_factor": 0.0,
+      "reason_counts": {
+        "손절": 2,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 2.81,
+      "dca_stats": {
+        "1": {
+          "count": 1,
+          "win_rate": 0.0,
+          "total_pnl": -654.2
+        },
+        "2": {
+          "count": 2,
+          "win_rate": 0.0,
+          "total_pnl": -22205.28
+        }
+      }
+    },
+    "IP": {
+      "symbol": "IP",
+      "final_balance": 987029.09,
+      "total_pnl": -10679.24,
+      "total_pnl_rate": -1.07,
+      "total_trades": 5,
+      "win_rate": 40.0,
+      "avg_profit": 422.32,
+      "avg_loss": -3841.29,
+      "total_fee": 4556.57,
+      "mdd": -1.48,
+      "profit_factor": 0.073,
+      "reason_counts": {
+        "횡보정리": 2,
+        "전략매도": 2,
+        "손절": 1
+      },
+      "avg_holding_hours": 9.43,
+      "dca_stats": {
+        "1": {
+          "count": 4,
+          "win_rate": 50.0,
+          "total_pnl": -176.6
+        },
+        "2": {
+          "count": 1,
+          "win_rate": 0.0,
+          "total_pnl": -10502.65
+        }
+      }
+    },
+    "KAIA": {
+      "symbol": "KAIA",
+      "final_balance": 990755.6,
+      "total_pnl": -7994.4,
+      "total_pnl_rate": -0.8,
+      "total_trades": 2,
+      "win_rate": 0.0,
+      "avg_profit": 0.0,
+      "avg_loss": -3997.2,
+      "total_fee": 2479.96,
+      "mdd": -1.02,
+      "profit_factor": 0.0,
+      "reason_counts": {
+        "전략매도": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 4.25,
+      "dca_stats": {
+        "2": {
+          "count": 2,
+          "win_rate": 0.0,
+          "total_pnl": -7994.4
+        }
+      }
+    },
+    "KITE": {
+      "symbol": "KITE",
+      "final_balance": 957531.59,
+      "total_pnl": -39968.41,
+      "total_pnl_rate": -4.0,
+      "total_trades": 4,
+      "win_rate": 0.0,
+      "avg_profit": 0.0,
+      "avg_loss": -9992.1,
+      "total_fee": 4899.83,
+      "mdd": -4.26,
+      "profit_factor": 0.0,
+      "reason_counts": {
+        "손절": 3,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 7.77,
+      "dca_stats": {
+        "2": {
+          "count": 4,
+          "win_rate": 0.0,
+          "total_pnl": -39968.41
+        }
+      }
+    },
+    "LA": {
+      "symbol": "LA",
+      "final_balance": 993441.12,
+      "total_pnl": -3433.88,
+      "total_pnl_rate": -0.34,
+      "total_trades": 6,
+      "win_rate": 50.0,
+      "avg_profit": 5233.15,
+      "avg_loss": -6377.77,
+      "total_fee": 6241.39,
+      "mdd": -1.95,
+      "profit_factor": 0.821,
+      "reason_counts": {
+        "횡보정리": 1,
+        "전략매도": 1,
+        "트레일링스탑": 1,
+        "손절": 1,
+        "동적익절": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 6.49,
+      "dca_stats": {
+        "1": {
+          "count": 3,
+          "win_rate": 66.67,
+          "total_pnl": 5495.73
+        },
+        "2": {
+          "count": 3,
+          "win_rate": 33.33,
+          "total_pnl": -8929.6
+        }
+      }
+    },
+    "LISTA": {
+      "symbol": "LISTA",
+      "final_balance": 999169.69,
+      "total_pnl": 2503.03,
+      "total_pnl_rate": 0.25,
+      "total_trades": 7,
+      "win_rate": 57.14,
+      "avg_profit": 4379.6,
+      "avg_loss": -5005.13,
+      "total_fee": 6672.94,
+      "mdd": -1.91,
+      "profit_factor": 1.167,
+      "reason_counts": {
+        "동적익절": 1,
+        "전략매도": 1,
+        "횡보정리": 3,
+        "손절": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 8.0,
+      "dca_stats": {
+        "1": {
+          "count": 5,
+          "win_rate": 60.0,
+          "total_pnl": 9871.0
+        },
+        "2": {
+          "count": 2,
+          "win_rate": 50.0,
+          "total_pnl": -7367.97
+        }
+      }
+    },
+    "MBX": {
+      "symbol": "MBX",
+      "final_balance": 999507.26,
+      "total_pnl": 965.59,
+      "total_pnl_rate": 0.1,
+      "total_trades": 3,
+      "win_rate": 66.67,
+      "avg_profit": 4032.9,
+      "avg_loss": -7100.21,
+      "total_fee": 2919.09,
+      "mdd": -0.83,
+      "profit_factor": 1.136,
+      "reason_counts": {
+        "전략매도": 2,
+        "동적익절": 1
+      },
+      "avg_holding_hours": 5.17,
+      "dca_stats": {
+        "1": {
+          "count": 2,
+          "win_rate": 100.0,
+          "total_pnl": 8065.81
+        },
+        "2": {
+          "count": 1,
+          "win_rate": 0.0,
+          "total_pnl": -7100.21
+        }
+      }
+    },
+    "ME": {
+      "symbol": "ME",
+      "final_balance": 987405.54,
+      "total_pnl": -9261.13,
+      "total_pnl_rate": -0.93,
+      "total_trades": 7,
+      "win_rate": 28.57,
+      "avg_profit": 1776.67,
+      "avg_loss": -2562.89,
+      "total_fee": 6643.46,
+      "mdd": -1.78,
+      "profit_factor": 0.277,
+      "reason_counts": {
+        "횡보정리": 4,
+        "전략매도": 1,
+        "손절": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 9.39,
+      "dca_stats": {
+        "1": {
+          "count": 5,
+          "win_rate": 40.0,
+          "total_pnl": 1309.48
+        },
+        "2": {
+          "count": 2,
+          "win_rate": 0.0,
+          "total_pnl": -10570.61
+        }
+      }
+    },
+    "MOODENG": {
+      "symbol": "MOODENG",
+      "final_balance": 981985.59,
+      "total_pnl": -12389.41,
+      "total_pnl_rate": -1.24,
+      "total_trades": 11,
+      "win_rate": 45.45,
+      "avg_profit": 4382.38,
+      "avg_loss": -5716.89,
+      "total_fee": 11218.95,
+      "mdd": -3.17,
+      "profit_factor": 0.639,
+      "reason_counts": {
+        "전략매도": 5,
+        "손절": 3,
+        "동적익절": 1,
+        "횡보정리": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 5.11,
+      "dca_stats": {
+        "1": {
+          "count": 6,
+          "win_rate": 66.67,
+          "total_pnl": 6770.1
+        },
+        "2": {
+          "count": 5,
+          "win_rate": 20.0,
+          "total_pnl": -19159.51
+        }
+      }
+    },
+    "NEO": {
+      "symbol": "NEO",
+      "final_balance": 976335.02,
+      "total_pnl": -20539.98,
+      "total_pnl_rate": -2.05,
+      "total_trades": 6,
+      "win_rate": 0.0,
+      "avg_profit": 0.0,
+      "avg_loss": -3423.33,
+      "total_fee": 6198.52,
+      "mdd": -2.56,
+      "profit_factor": 0.0,
+      "reason_counts": {
+        "횡보정리": 4,
+        "손절": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 11.57,
+      "dca_stats": {
+        "1": {
+          "count": 3,
+          "win_rate": 0.0,
+          "total_pnl": -3709.65
+        },
+        "2": {
+          "count": 3,
+          "win_rate": 0.0,
+          "total_pnl": -16830.33
+        }
+      }
+    },
+    "OGN": {
+      "symbol": "OGN",
+      "final_balance": 930479.35,
+      "total_pnl": -58895.65,
+      "total_pnl_rate": -5.89,
+      "total_trades": 21,
+      "win_rate": 33.33,
+      "avg_profit": 3843.47,
+      "avg_loss": -6128.57,
+      "total_fee": 21102.39,
+      "mdd": -7.42,
+      "profit_factor": 0.314,
+      "reason_counts": {
+        "횡보정리": 7,
+        "전략매도": 3,
+        "트레일링스탑": 2,
+        "동적익절": 2,
+        "손절": 7
+      },
+      "avg_holding_hours": 7.21,
+      "dca_stats": {
+        "1": {
+          "count": 12,
+          "win_rate": 41.67,
+          "total_pnl": -12346.8
+        },
+        "2": {
+          "count": 9,
+          "win_rate": 22.22,
+          "total_pnl": -46548.85
+        }
+      }
+    },
+    "OXT": {
+      "symbol": "OXT",
+      "final_balance": 1003815.78,
+      "total_pnl": 15065.78,
+      "total_pnl_rate": 1.51,
+      "total_trades": 22,
+      "win_rate": 50.0,
+      "avg_profit": 7479.57,
+      "avg_loss": -6109.96,
+      "total_fee": 22537.76,
+      "mdd": -2.49,
+      "profit_factor": 1.224,
+      "reason_counts": {
+        "전략매도": 4,
+        "손절": 5,
+        "동적익절": 7,
+        "횡보정리": 5,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 7.98,
+      "dca_stats": {
+        "1": {
+          "count": 12,
+          "win_rate": 58.33,
+          "total_pnl": 57010.55
+        },
+        "2": {
+          "count": 10,
+          "win_rate": 40.0,
+          "total_pnl": -41944.77
+        }
+      }
+    },
+    "PENGU": {
+      "symbol": "PENGU",
+      "final_balance": 941720.46,
+      "total_pnl": -42862.87,
+      "total_pnl_rate": -4.29,
+      "total_trades": 29,
+      "win_rate": 51.72,
+      "avg_profit": 2872.13,
+      "avg_loss": -6138.91,
+      "total_fee": 30725.91,
+      "mdd": -6.75,
+      "profit_factor": 0.501,
+      "reason_counts": {
+        "전략매도": 13,
+        "손절": 6,
+        "동적익절": 4,
+        "횡보정리": 5,
+        "트레일링스탑": 1
+      },
+      "avg_holding_hours": 8.49,
+      "dca_stats": {
+        "1": {
+          "count": 13,
+          "win_rate": 76.92,
+          "total_pnl": 25795.93
+        },
+        "2": {
+          "count": 16,
+          "win_rate": 31.25,
+          "total_pnl": -68658.8
+        }
+      }
+    },
+    "PEPE": {
+      "symbol": "PEPE",
+      "final_balance": 1024909.57,
+      "total_pnl": 33659.57,
+      "total_pnl_rate": 3.37,
+      "total_trades": 20,
+      "win_rate": 50.0,
+      "avg_profit": 5690.18,
+      "avg_loss": -2324.22,
+      "total_fee": 17584.36,
+      "mdd": -2.33,
+      "profit_factor": 2.448,
+      "reason_counts": {
+        "손절": 2,
+        "횡보정리": 8,
+        "동적익절": 7,
+        "전략매도": 2,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 10.29,
+      "dca_stats": {
+        "1": {
+          "count": 18,
+          "win_rate": 44.44,
+          "total_pnl": 33483.61
+        },
+        "2": {
+          "count": 2,
+          "win_rate": 100.0,
+          "total_pnl": 175.96
+        }
+      }
+    },
+    "PLUME": {
+      "symbol": "PLUME",
+      "final_balance": 1005744.71,
+      "total_pnl": 7828.05,
+      "total_pnl_rate": 0.78,
+      "total_trades": 5,
+      "win_rate": 80.0,
+      "avg_profit": 1960.64,
+      "avg_loss": -14.5,
+      "total_fee": 4186.29,
+      "mdd": -0.7,
+      "profit_factor": 540.698,
+      "reason_counts": {
+        "전략매도": 4,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 5.12,
+      "dca_stats": {
+        "1": {
+          "count": 5,
+          "win_rate": 80.0,
+          "total_pnl": 7828.05
+        }
+      }
+    },
+    "POLA": {
+      "symbol": "POLA",
+      "final_balance": 1012843.61,
+      "total_pnl": 23260.28,
+      "total_pnl_rate": 2.33,
+      "total_trades": 20,
+      "win_rate": 50.0,
+      "avg_profit": 11488.51,
+      "avg_loss": -9162.48,
+      "total_fee": 20891.63,
+      "mdd": -5.09,
+      "profit_factor": 1.254,
+      "reason_counts": {
+        "전략매도": 2,
+        "횡보정리": 1,
+        "손절": 8,
+        "동적익절": 6,
+        "트레일링스탑": 3
+      },
+      "avg_holding_hours": 5.01,
+      "dca_stats": {
+        "1": {
+          "count": 10,
+          "win_rate": 60.0,
+          "total_pnl": 6396.83
+        },
+        "2": {
+          "count": 10,
+          "win_rate": 40.0,
+          "total_pnl": 16863.45
+        }
+      }
+    },
+    "PONKE": {
+      "symbol": "PONKE",
+      "final_balance": 988916.1,
+      "total_pnl": -8167.23,
+      "total_pnl_rate": -0.82,
+      "total_trades": 5,
+      "win_rate": 40.0,
+      "avg_profit": 6623.86,
+      "avg_loss": -7138.32,
+      "total_fee": 5812.86,
+      "mdd": -2.29,
+      "profit_factor": 0.619,
+      "reason_counts": {
+        "전략매도": 3,
+        "손절": 2
+      },
+      "avg_holding_hours": 7.65,
+      "dca_stats": {
+        "1": {
+          "count": 1,
+          "win_rate": 100.0,
+          "total_pnl": 3427.06
+        },
+        "2": {
+          "count": 4,
+          "win_rate": 25.0,
+          "total_pnl": -11594.3
+        }
+      }
+    },
+    "RECALL": {
+      "symbol": "RECALL",
+      "final_balance": 987057.58,
+      "total_pnl": -11275.76,
+      "total_pnl_rate": -1.13,
+      "total_trades": 3,
+      "win_rate": 0.0,
+      "avg_profit": 0.0,
+      "avg_loss": -3758.59,
+      "total_fee": 3305.07,
+      "mdd": -1.64,
+      "profit_factor": 0.0,
+      "reason_counts": {
+        "횡보정리": 1,
+        "전략매도": 1,
+        "손절": 1
+      },
+      "avg_holding_hours": 6.83,
+      "dca_stats": {
+        "1": {
+          "count": 1,
+          "win_rate": 0.0,
+          "total_pnl": -962.12
+        },
+        "2": {
+          "count": 2,
+          "win_rate": 0.0,
+          "total_pnl": -10313.64
+        }
+      }
+    },
+    "RENDER": {
+      "symbol": "RENDER",
+      "final_balance": 1026489.04,
+      "total_pnl": 30447.38,
+      "total_pnl_rate": 3.04,
+      "total_trades": 8,
+      "win_rate": 75.0,
+      "avg_profit": 6100.64,
+      "avg_loss": -3078.22,
+      "total_fee": 7992.98,
+      "mdd": -0.74,
+      "profit_factor": 5.946,
+      "reason_counts": {
+        "동적익절": 4,
+        "횡보정리": 1,
+        "전략매도": 3
+      },
+      "avg_holding_hours": 5.25,
+      "dca_stats": {
+        "1": {
+          "count": 5,
+          "win_rate": 100.0,
+          "total_pnl": 32658.36
+        },
+        "2": {
+          "count": 3,
+          "win_rate": 33.33,
+          "total_pnl": -2210.99
+        }
+      }
+    },
+    "RESOLV": {
+      "symbol": "RESOLV",
+      "final_balance": 955054.46,
+      "total_pnl": -21612.21,
+      "total_pnl_rate": -2.16,
+      "total_trades": 42,
+      "win_rate": 45.24,
+      "avg_profit": 8841.26,
+      "avg_loss": -8243.31,
+      "total_fee": 46612.5,
+      "mdd": -12.58,
+      "profit_factor": 0.886,
+      "reason_counts": {
+        "전략매도": 8,
+        "횡보정리": 4,
+        "동적익절": 12,
+        "손절": 17,
+        "트레일링스탑": 1
+      },
+      "avg_holding_hours": 5.32,
+      "dca_stats": {
+        "1": {
+          "count": 14,
+          "win_rate": 71.43,
+          "total_pnl": 49628.25
+        },
+        "2": {
+          "count": 28,
+          "win_rate": 32.14,
+          "total_pnl": -71240.47
+        }
+      }
+    },
+    "REZ": {
+      "symbol": "REZ",
+      "final_balance": 1027045.05,
+      "total_pnl": 33920.05,
+      "total_pnl_rate": 3.39,
+      "total_trades": 14,
+      "win_rate": 57.14,
+      "avg_profit": 7672.51,
+      "avg_loss": -4576.68,
+      "total_fee": 13835.01,
+      "mdd": -2.37,
+      "profit_factor": 2.235,
+      "reason_counts": {
+        "전략매도": 5,
+        "횡보정리": 2,
+        "동적익절": 3,
+        "손절": 3,
+        "트레일링스탑": 1
+      },
+      "avg_holding_hours": 4.33,
+      "dca_stats": {
+        "1": {
+          "count": 9,
+          "win_rate": 66.67,
+          "total_pnl": 31147.37
+        },
+        "2": {
+          "count": 5,
+          "win_rate": 40.0,
+          "total_pnl": 2772.68
+        }
+      }
+    },
+    "SAHARA": {
+      "symbol": "SAHARA",
+      "final_balance": 1000436.27,
+      "total_pnl": 3561.27,
+      "total_pnl_rate": 0.36,
+      "total_trades": 6,
+      "win_rate": 33.33,
+      "avg_profit": 9017.19,
+      "avg_loss": -3618.28,
+      "total_fee": 6258.93,
+      "mdd": -1.78,
+      "profit_factor": 1.246,
+      "reason_counts": {
+        "횡보정리": 1,
+        "동적익절": 1,
+        "전략매도": 3,
+        "손절": 1
+      },
+      "avg_holding_hours": 6.58,
+      "dca_stats": {
+        "1": {
+          "count": 3,
+          "win_rate": 33.33,
+          "total_pnl": 8838.72
+        },
+        "2": {
+          "count": 3,
+          "win_rate": 33.33,
+          "total_pnl": -5277.45
+        }
+      }
+    },
+    "SHELL": {
+      "symbol": "SHELL",
+      "final_balance": 977320.13,
+      "total_pnl": -19554.87,
+      "total_pnl_rate": -1.96,
+      "total_trades": 6,
+      "win_rate": 33.33,
+      "avg_profit": 4195.36,
+      "avg_loss": -6986.4,
+      "total_fee": 6200.99,
+      "mdd": -2.79,
+      "profit_factor": 0.3,
+      "reason_counts": {
+        "횡보정리": 1,
+        "손절": 3,
+        "동적익절": 1,
+        "전략매도": 1
+      },
+      "avg_holding_hours": 7.54,
+      "dca_stats": {
+        "1": {
+          "count": 3,
+          "win_rate": 66.67,
+          "total_pnl": 1263.14
+        },
+        "2": {
+          "count": 3,
+          "win_rate": 0.0,
+          "total_pnl": -20818.01
+        }
+      }
+    },
+    "SHIB": {
+      "symbol": "SHIB",
+      "final_balance": 1013488.93,
+      "total_pnl": 22238.93,
+      "total_pnl_rate": 2.22,
+      "total_trades": 19,
+      "win_rate": 68.42,
+      "avg_profit": 3579.91,
+      "avg_loss": -4049.98,
+      "total_fee": 17555.74,
+      "mdd": -1.82,
+      "profit_factor": 1.915,
+      "reason_counts": {
+        "손절": 2,
+        "전략매도": 4,
+        "동적익절": 5,
+        "횡보정리": 8
+      },
+      "avg_holding_hours": 11.35,
+      "dca_stats": {
+        "1": {
+          "count": 15,
+          "win_rate": 73.33,
+          "total_pnl": 22775.26
+        },
+        "2": {
+          "count": 4,
+          "win_rate": 50.0,
+          "total_pnl": -536.34
+        }
+      }
+    },
+    "SIGN": {
+      "symbol": "SIGN",
+      "final_balance": 1009554.68,
+      "total_pnl": 24346.35,
+      "total_pnl_rate": 2.43,
+      "total_trades": 29,
+      "win_rate": 58.62,
+      "avg_profit": 6792.37,
+      "avg_loss": -7593.66,
+      "total_fee": 29644.35,
+      "mdd": -5.04,
+      "profit_factor": 1.267,
+      "reason_counts": {
+        "손절": 9,
+        "전략매도": 6,
+        "동적익절": 10,
+        "횡보정리": 3,
+        "트레일링스탑": 1
+      },
+      "avg_holding_hours": 5.57,
+      "dca_stats": {
+        "1": {
+          "count": 16,
+          "win_rate": 75.0,
+          "total_pnl": 77609.18
+        },
+        "2": {
+          "count": 13,
+          "win_rate": 38.46,
+          "total_pnl": -53262.83
+        }
+      }
+    },
+    "SOL": {
+      "symbol": "SOL",
+      "final_balance": 966240.34,
+      "total_pnl": -20426.33,
+      "total_pnl_rate": -2.04,
+      "total_trades": 27,
+      "win_rate": 44.44,
+      "avg_profit": 2508.64,
+      "avg_loss": -3368.66,
+      "total_fee": 26615.47,
+      "mdd": -3.9,
+      "profit_factor": 0.596,
+      "reason_counts": {
+        "손절": 3,
+        "동적익절": 1,
+        "전략매도": 18,
+        "횡보정리": 4,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 9.38,
+      "dca_stats": {
+        "1": {
+          "count": 17,
+          "win_rate": 58.82,
+          "total_pnl": 15416.59
+        },
+        "2": {
+          "count": 10,
+          "win_rate": 20.0,
+          "total_pnl": -35842.91
+        }
+      }
+    },
+    "SOLV": {
+      "symbol": "SOLV",
+      "final_balance": 1038317.72,
+      "total_pnl": 43109.38,
+      "total_pnl_rate": 4.31,
+      "total_trades": 10,
+      "win_rate": 70.0,
+      "avg_profit": 9200.92,
+      "avg_loss": -7099.01,
+      "total_fee": 9691.38,
+      "mdd": -1.3,
+      "profit_factor": 3.024,
+      "reason_counts": {
+        "동적익절": 5,
+        "횡보정리": 1,
+        "손절": 2,
+        "전략매도": 2
+      },
+      "avg_holding_hours": 5.72,
+      "dca_stats": {
+        "1": {
+          "count": 7,
+          "win_rate": 85.71,
+          "total_pnl": 40375.82
+        },
+        "2": {
+          "count": 3,
+          "win_rate": 33.33,
+          "total_pnl": 2733.57
+        }
+      }
+    },
+    "STEEM": {
+      "symbol": "STEEM",
+      "final_balance": 996924.81,
+      "total_pnl": -783.52,
+      "total_pnl_rate": -0.08,
+      "total_trades": 4,
+      "win_rate": 25.0,
+      "avg_profit": 5681.95,
+      "avg_loss": -2155.16,
+      "total_fee": 4581.37,
+      "mdd": -0.93,
+      "profit_factor": 0.879,
+      "reason_counts": {
+        "횡보정리": 1,
+        "전략매도": 2,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 5.48,
+      "dca_stats": {
+        "1": {
+          "count": 1,
+          "win_rate": 0.0,
+          "total_pnl": -769.07
+        },
+        "2": {
+          "count": 3,
+          "win_rate": 33.33,
+          "total_pnl": -14.45
+        }
+      }
+    },
+    "SUI": {
+      "symbol": "SUI",
+      "final_balance": 956264.83,
+      "total_pnl": -28110.17,
+      "total_pnl_rate": -2.81,
+      "total_trades": 30,
+      "win_rate": 43.33,
+      "avg_profit": 3391.86,
+      "avg_loss": -4247.31,
+      "total_fee": 31179.55,
+      "mdd": -4.67,
+      "profit_factor": 0.611,
+      "reason_counts": {
+        "전략매도": 12,
+        "손절": 5,
+        "트레일링스탑": 2,
+        "동적익절": 2,
+        "횡보정리": 8,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 7.73,
+      "dca_stats": {
+        "1": {
+          "count": 15,
+          "win_rate": 60.0,
+          "total_pnl": 28835.77
+        },
+        "2": {
+          "count": 15,
+          "win_rate": 26.67,
+          "total_pnl": -56945.94
+        }
+      }
+    },
+    "SUNDOG": {
+      "symbol": "SUNDOG",
+      "final_balance": 969583.34,
+      "total_pnl": -25416.66,
+      "total_pnl_rate": -2.54,
+      "total_trades": 9,
+      "win_rate": 44.44,
+      "avg_profit": 4252.8,
+      "avg_loss": -8485.57,
+      "total_fee": 9936.3,
+      "mdd": -3.46,
+      "profit_factor": 0.401,
+      "reason_counts": {
+        "횡보정리": 2,
+        "손절": 4,
+        "동적익절": 2,
+        "전략매도": 1
+      },
+      "avg_holding_hours": 4.57,
+      "dca_stats": {
+        "1": {
+          "count": 3,
+          "win_rate": 66.67,
+          "total_pnl": 9483.77
+        },
+        "2": {
+          "count": 6,
+          "win_rate": 33.33,
+          "total_pnl": -34900.43
+        }
+      }
+    },
+    "SXT": {
+      "symbol": "SXT",
+      "final_balance": 988092.13,
+      "total_pnl": -10032.87,
+      "total_pnl_rate": -1.0,
+      "total_trades": 3,
+      "win_rate": 66.67,
+      "avg_profit": 438.75,
+      "avg_loss": -10910.38,
+      "total_fee": 3724.85,
+      "mdd": -2.07,
+      "profit_factor": 0.08,
+      "reason_counts": {
+        "손절": 1,
+        "전략매도": 2
+      },
+      "avg_holding_hours": 5.56,
+      "dca_stats": {
+        "2": {
+          "count": 3,
+          "win_rate": 66.67,
+          "total_pnl": -10032.87
+        }
+      }
+    },
+    "TAO": {
+      "symbol": "TAO",
+      "final_balance": 1008859.49,
+      "total_pnl": 11567.83,
+      "total_pnl_rate": 1.16,
+      "total_trades": 5,
+      "win_rate": 80.0,
+      "avg_profit": 5037.21,
+      "avg_loss": -8581.01,
+      "total_fee": 5445.66,
+      "mdd": -1.13,
+      "profit_factor": 2.348,
+      "reason_counts": {
+        "동적익절": 1,
+        "전략매도": 3,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 4.97,
+      "dca_stats": {
+        "1": {
+          "count": 2,
+          "win_rate": 100.0,
+          "total_pnl": 11328.64
+        },
+        "2": {
+          "count": 3,
+          "win_rate": 66.67,
+          "total_pnl": 239.19
+        }
+      }
+    },
+    "TAVA": {
+      "symbol": "TAVA",
+      "final_balance": 1071772.06,
+      "total_pnl": 76980.39,
+      "total_pnl_rate": 7.7,
+      "total_trades": 10,
+      "win_rate": 70.0,
+      "avg_profit": 14841.52,
+      "avg_loss": -8970.09,
+      "total_fee": 10609.6,
+      "mdd": -2.11,
+      "profit_factor": 3.861,
+      "reason_counts": {
+        "동적익절": 5,
+        "트레일링스탑": 2,
+        "전략매도": 1,
+        "손절": 2
+      },
+      "avg_holding_hours": 2.85,
+      "dca_stats": {
+        "1": {
+          "count": 5,
+          "win_rate": 100.0,
+          "total_pnl": 41075.47
+        },
+        "2": {
+          "count": 5,
+          "win_rate": 40.0,
+          "total_pnl": 35904.92
+        }
+      }
+    },
+    "THE": {
+      "symbol": "THE",
+      "final_balance": 976470.73,
+      "total_pnl": -18320.93,
+      "total_pnl_rate": -1.83,
+      "total_trades": 11,
+      "win_rate": 36.36,
+      "avg_profit": 3715.49,
+      "avg_loss": -4740.42,
+      "total_fee": 10370.75,
+      "mdd": -3.35,
+      "profit_factor": 0.448,
+      "reason_counts": {
+        "동적익절": 2,
+        "전략매도": 2,
+        "횡보정리": 3,
+        "손절": 3,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 7.77,
+      "dca_stats": {
+        "1": {
+          "count": 8,
+          "win_rate": 50.0,
+          "total_pnl": -2389.25
+        },
+        "2": {
+          "count": 3,
+          "win_rate": 0.0,
+          "total_pnl": -15931.68
+        }
+      }
+    },
+    "TOWNS": {
+      "symbol": "TOWNS",
+      "final_balance": 997863.63,
+      "total_pnl": 4946.96,
+      "total_pnl_rate": 0.49,
+      "total_trades": 13,
+      "win_rate": 69.23,
+      "avg_profit": 4868.07,
+      "avg_loss": -9716.42,
+      "total_fee": 14179.07,
+      "mdd": -2.6,
+      "profit_factor": 1.127,
+      "reason_counts": {
+        "전략매도": 5,
+        "손절": 4,
+        "횡보정리": 1,
+        "트레일링스탑": 1,
+        "동적익절": 2
+      },
+      "avg_holding_hours": 4.29,
+      "dca_stats": {
+        "1": {
+          "count": 5,
+          "win_rate": 80.0,
+          "total_pnl": 10141.1
+        },
+        "2": {
+          "count": 8,
+          "win_rate": 62.5,
+          "total_pnl": -5194.13
+        }
+      }
+    },
+    "TRUMP": {
+      "symbol": "TRUMP",
+      "final_balance": 961538.1,
+      "total_pnl": -24920.23,
+      "total_pnl_rate": -2.49,
+      "total_trades": 27,
+      "win_rate": 48.15,
+      "avg_profit": 4303.39,
+      "avg_loss": -5776.02,
+      "total_fee": 27020.88,
+      "mdd": -5.58,
+      "profit_factor": 0.692,
+      "reason_counts": {
+        "횡보정리": 5,
+        "전략매도": 11,
+        "동적익절": 5,
+        "손절": 6
+      },
+      "avg_holding_hours": 7.64,
+      "dca_stats": {
+        "1": {
+          "count": 16,
+          "win_rate": 68.75,
+          "total_pnl": 24330.41
+        },
+        "2": {
+          "count": 11,
+          "win_rate": 18.18,
+          "total_pnl": -49250.64
+        }
+      }
+    },
+    "TURBO": {
+      "symbol": "TURBO",
+      "final_balance": 974546.18,
+      "total_pnl": -15662.15,
+      "total_pnl_rate": -1.57,
+      "total_trades": 19,
+      "win_rate": 52.63,
+      "avg_profit": 4725.03,
+      "avg_loss": -6990.28,
+      "total_fee": 19544.08,
+      "mdd": -3.93,
+      "profit_factor": 0.751,
+      "reason_counts": {
+        "손절": 6,
+        "동적익절": 4,
+        "전략매도": 3,
+        "횡보정리": 5,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 8.46,
+      "dca_stats": {
+        "1": {
+          "count": 10,
+          "win_rate": 60.0,
+          "total_pnl": 291.88
+        },
+        "2": {
+          "count": 9,
+          "win_rate": 44.44,
+          "total_pnl": -15954.04
+        }
+      }
+    },
+    "VIRTUAL": {
+      "symbol": "VIRTUAL",
+      "final_balance": 980288.58,
+      "total_pnl": -3669.75,
+      "total_pnl_rate": -0.37,
+      "total_trades": 31,
+      "win_rate": 54.84,
+      "avg_profit": 4292.14,
+      "avg_loss": -5474.01,
+      "total_fee": 32074.14,
+      "mdd": -3.97,
+      "profit_factor": 0.952,
+      "reason_counts": {
+        "전략매도": 13,
+        "손절": 7,
+        "동적익절": 5,
+        "횡보정리": 5,
+        "트레일링스탑": 1
+      },
+      "avg_holding_hours": 7.9,
+      "dca_stats": {
+        "1": {
+          "count": 16,
+          "win_rate": 62.5,
+          "total_pnl": 32314.0
+        },
+        "2": {
+          "count": 15,
+          "win_rate": 46.67,
+          "total_pnl": -35983.75
+        }
+      }
+    },
+    "WLD": {
+      "symbol": "WLD",
+      "final_balance": 962410.38,
+      "total_pnl": -21756.28,
+      "total_pnl_rate": -2.18,
+      "total_trades": 33,
+      "win_rate": 48.48,
+      "avg_profit": 2707.34,
+      "avg_loss": -3827.87,
+      "total_fee": 31612.14,
+      "mdd": -5.71,
+      "profit_factor": 0.666,
+      "reason_counts": {
+        "전략매도": 21,
+        "손절": 4,
+        "동적익절": 3,
+        "횡보정리": 4,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 8.12,
+      "dca_stats": {
+        "1": {
+          "count": 23,
+          "win_rate": 60.87,
+          "total_pnl": 25178.54
+        },
+        "2": {
+          "count": 10,
+          "win_rate": 20.0,
+          "total_pnl": -46934.83
+        }
+      }
+    },
+    "WLFI": {
+      "symbol": "WLFI",
+      "final_balance": 990880.27,
+      "total_pnl": -6203.06,
+      "total_pnl_rate": -0.62,
+      "total_trades": 6,
+      "win_rate": 50.0,
+      "avg_profit": 1162.01,
+      "avg_loss": -3229.7,
+      "total_fee": 5817.79,
+      "mdd": -1.33,
+      "profit_factor": 0.36,
+      "reason_counts": {
+        "전략매도": 3,
+        "횡보정리": 2,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 6.61,
+      "dca_stats": {
+        "1": {
+          "count": 4,
+          "win_rate": 75.0,
+          "total_pnl": 1292.37
+        },
+        "2": {
+          "count": 2,
+          "win_rate": 0.0,
+          "total_pnl": -7495.43
+        }
+      }
+    },
+    "XAI": {
+      "symbol": "XAI",
+      "final_balance": 969820.6,
+      "total_pnl": -26846.07,
+      "total_pnl_rate": -2.68,
+      "total_trades": 6,
+      "win_rate": 16.67,
+      "avg_profit": 8103.97,
+      "avg_loss": -6990.01,
+      "total_fee": 6599.38,
+      "mdd": -3.53,
+      "profit_factor": 0.232,
+      "reason_counts": {
+        "트레일링스탑": 1,
+        "손절": 3,
+        "동적익절": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 2.65,
+      "dca_stats": {
+        "1": {
+          "count": 2,
+          "win_rate": 50.0,
+          "total_pnl": 6237.45
+        },
+        "2": {
+          "count": 4,
+          "win_rate": 0.0,
+          "total_pnl": -33083.52
+        }
+      }
+    },
+    "XAN": {
+      "symbol": "XAN",
+      "final_balance": 1003096.82,
+      "total_pnl": 9971.82,
+      "total_pnl_rate": 1.0,
+      "total_trades": 16,
+      "win_rate": 56.25,
+      "avg_profit": 6643.3,
+      "avg_loss": -7116.84,
+      "total_fee": 13774.99,
+      "mdd": -4.8,
+      "profit_factor": 1.2,
+      "reason_counts": {
+        "전략매도": 2,
+        "횡보정리": 2,
+        "동적익절": 7,
+        "손절": 5
+      },
+      "avg_holding_hours": 4.8,
+      "dca_stats": {
+        "1": {
+          "count": 15,
+          "win_rate": 60.0,
+          "total_pnl": 21946.03
+        },
+        "2": {
+          "count": 1,
+          "win_rate": 0.0,
+          "total_pnl": -11974.2
+        }
+      }
+    },
+    "XCN": {
+      "symbol": "XCN",
+      "final_balance": 1005758.92,
+      "total_pnl": 10133.92,
+      "total_pnl_rate": 1.01,
+      "total_trades": 8,
+      "win_rate": 50.0,
+      "avg_profit": 7905.7,
+      "avg_loss": -5372.22,
+      "total_fee": 8775.4,
+      "mdd": -2.03,
+      "profit_factor": 1.472,
+      "reason_counts": {
+        "횡보정리": 2,
+        "동적익절": 3,
+        "손절": 2,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 6.66,
+      "dca_stats": {
+        "1": {
+          "count": 3,
+          "win_rate": 66.67,
+          "total_pnl": 9869.86
+        },
+        "2": {
+          "count": 5,
+          "win_rate": 40.0,
+          "total_pnl": 264.05
+        }
+      }
+    },
+    "XLM": {
+      "symbol": "XLM",
+      "final_balance": 954152.82,
+      "total_pnl": -32305.52,
+      "total_pnl_rate": -3.23,
+      "total_trades": 28,
+      "win_rate": 46.43,
+      "avg_profit": 2308.09,
+      "avg_loss": -4154.04,
+      "total_fee": 27002.37,
+      "mdd": -5.81,
+      "profit_factor": 0.482,
+      "reason_counts": {
+        "손절": 4,
+        "전략매도": 13,
+        "횡보정리": 11
+      },
+      "avg_holding_hours": 9.7,
+      "dca_stats": {
+        "1": {
+          "count": 19,
+          "win_rate": 63.16,
+          "total_pnl": 8350.97
+        },
+        "2": {
+          "count": 9,
+          "win_rate": 11.11,
+          "total_pnl": -40656.48
+        }
+      }
+    },
+    "XRP": {
+      "symbol": "XRP",
+      "final_balance": 975801.16,
+      "total_pnl": -9407.18,
+      "total_pnl_rate": -0.94,
+      "total_trades": 31,
+      "win_rate": 45.16,
+      "avg_profit": 2375.94,
+      "avg_loss": -2510.02,
+      "total_fee": 29559.76,
+      "mdd": -3.6,
+      "profit_factor": 0.78,
+      "reason_counts": {
+        "전략매도": 21,
+        "손절": 2,
+        "동적익절": 1,
+        "횡보정리": 6,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 7.78,
+      "dca_stats": {
+        "1": {
+          "count": 22,
+          "win_rate": 54.55,
+          "total_pnl": 7262.65
+        },
+        "2": {
+          "count": 9,
+          "win_rate": 22.22,
+          "total_pnl": -16669.83
+        }
+      }
+    },
+    "XVS": {
+      "symbol": "XVS",
+      "final_balance": 1002636.3,
+      "total_pnl": 5344.63,
+      "total_pnl_rate": 0.53,
+      "total_trades": 6,
+      "win_rate": 66.67,
+      "avg_profit": 2590.89,
+      "avg_loss": -2509.47,
+      "total_fee": 5430.06,
+      "mdd": -0.92,
+      "profit_factor": 2.065,
+      "reason_counts": {
+        "횡보정리": 3,
+        "트레일링스탑": 1,
+        "동적익절": 1,
+        "백테스트종료": 1
+      },
+      "avg_holding_hours": 6.83,
+      "dca_stats": {
+        "1": {
+          "count": 5,
+          "win_rate": 80.0,
+          "total_pnl": 8875.14
+        },
+        "2": {
+          "count": 1,
+          "win_rate": 0.0,
+          "total_pnl": -3530.51
+        }
+      }
+    }
+  }
+}

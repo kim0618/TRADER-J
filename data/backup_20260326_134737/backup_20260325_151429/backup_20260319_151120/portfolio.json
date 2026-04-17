@@ -1,0 +1,9 @@
+{
+  "cash": 1000000,
+  "positions": {},
+  "buy_orders": 0,
+  "sell_orders": 0,
+  "closed_trades": 0,
+  "win_trades": 0,
+  "total_profit": 0.0
+}
