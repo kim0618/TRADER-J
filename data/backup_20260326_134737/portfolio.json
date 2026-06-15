@@ -1,0 +1,19 @@
+{
+  "cash": 800000.0,
+  "positions": {
+    "VIRTUAL": {
+      "quantity": 184.69554397698107,
+      "avg_buy_price": 1080.156,
+      "total_invested": 199999.99999999997,
+      "buy_count": 1,
+      "buy_time": "2026-03-26T05:48:12.392634",
+      "last_buy_time": "2026-03-26T05:48:12.392634",
+      "peak_price": 1086.0
+    }
+  },
+  "buy_orders": 1,
+  "sell_orders": 0,
+  "closed_trades": 0,
+  "win_trades": 0,
+  "total_profit": 0.0
+}

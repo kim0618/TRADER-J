@@ -1,0 +1,38 @@
+{
+  "summary": {
+    "symbols": [
+      "BTC"
+    ],
+    "total_pnl": 0,
+    "avg_win_rate": 0,
+    "avg_profit_factor": 0,
+    "avg_sharpe": null,
+    "worst_mdd": 0.0,
+    "result_count": 1,
+    "traded_count": 0,
+    "no_trade_count": 1,
+    "skipped": {},
+    "generated_at": "2026-06-15T09:58:08.137626",
+    "days": 30,
+    "start": null,
+    "end": null
+  },
+  "results": {
+    "BTC": {
+      "symbol": "BTC",
+      "final_balance": 1000000,
+      "total_pnl": 0,
+      "total_pnl_rate": 0.0,
+      "total_trades": 0,
+      "win_rate": 0.0,
+      "avg_profit": 0.0,
+      "avg_loss": 0.0,
+      "total_fee": 0,
+      "mdd": 0.0,
+      "sharpe": null,
+      "profit_factor": 0,
+      "reason_counts": {},
+      "avg_holding_hours": 0.0
+    }
+  }
+}

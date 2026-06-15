@@ -1,0 +1,37 @@
+{
+  "cash": 296335.3525779078,
+  "positions": {
+    "VIRTUAL": {
+      "quantity": 216.07946896903863,
+      "avg_buy_price": 1077.15,
+      "total_invested": 233333.3333333333,
+      "buy_count": 1,
+      "buy_time": "2026-03-13T13:35:34.689837",
+      "last_buy_time": "2026-03-13T13:35:34.689837",
+      "peak_price": 1091.0
+    },
+    "SOL": {
+      "quantity": 1.7868109933978196,
+      "avg_buy_price": 130260.0,
+      "total_invested": 233333.3333333333,
+      "buy_count": 1,
+      "buy_time": "2026-03-13T14:58:58.513407",
+      "last_buy_time": "2026-03-13T14:58:58.513407",
+      "peak_price": 130260.0
+    },
+    "ETH": {
+      "quantity": 0.07581117139089966,
+      "avg_buy_price": 3070128.0,
+      "total_invested": 233333.3333333333,
+      "buy_count": 1,
+      "buy_time": "2026-03-13T15:48:19.596598",
+      "last_buy_time": "2026-03-13T15:48:19.596598",
+      "peak_price": 3079000.0
+    }
+  },
+  "buy_orders": 10,
+  "sell_orders": 5,
+  "closed_trades": 5,
+  "win_trades": 1,
+  "total_profit": -397.9807554256695
+}

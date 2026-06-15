@@ -1,0 +1,1523 @@
+{
+  "whitelist": [
+    "ALICE",
+    "API3",
+    "ATH",
+    "AXS",
+    "B3",
+    "BEL",
+    "BERA",
+    "CAMP",
+    "CPOOL",
+    "CTSI",
+    "DAO",
+    "DEEP",
+    "DEXE",
+    "DOT",
+    "EGG",
+    "EPT",
+    "ETHFI",
+    "EUL",
+    "GAS",
+    "GHX",
+    "GWEI",
+    "HAEDAL",
+    "ICX",
+    "ID",
+    "IRYS",
+    "KAIA",
+    "LA",
+    "LISTA",
+    "LPT",
+    "MEV",
+    "MON",
+    "MVC",
+    "NEO",
+    "RAD",
+    "RENDER",
+    "REQ",
+    "RPL",
+    "SHELL",
+    "SIGN",
+    "SIX",
+    "SKL",
+    "SOLV",
+    "SPURS",
+    "TDROP",
+    "TRAC",
+    "TRUST",
+    "TURBO",
+    "VVV",
+    "WET",
+    "WIKEN",
+    "XION",
+    "ZAMA",
+    "ZRC",
+    "ZTX"
+  ],
+  "blacklist": [
+    "0G",
+    "ACE",
+    "ADA",
+    "AERO",
+    "AGI",
+    "ALT",
+    "AMP",
+    "ANKR",
+    "AUDIO",
+    "AVL",
+    "BIO",
+    "BIOT",
+    "BLAST",
+    "BOB",
+    "BSV",
+    "BTR",
+    "CKB",
+    "COS",
+    "CRTS",
+    "CSPR",
+    "DBR",
+    "DOGE",
+    "DOOD",
+    "EDU",
+    "ENSO",
+    "ESP",
+    "FANC",
+    "FLOCK",
+    "FORT",
+    "GRND",
+    "GTC",
+    "H",
+    "HYPER",
+    "ICP",
+    "IN",
+    "IP",
+    "IQ",
+    "JOE",
+    "JTO",
+    "KAT",
+    "KERNEL",
+    "KITE",
+    "KNC",
+    "KSM",
+    "MAPO",
+    "MAV",
+    "ME",
+    "MOODENG",
+    "NXPC",
+    "ONDO",
+    "ONG",
+    "OPEN",
+    "OXT",
+    "PCI",
+    "PENGU",
+    "PIEVERSE",
+    "PLUME",
+    "POLYX",
+    "PONKE",
+    "PROMPT",
+    "PROVE",
+    "PYR",
+    "RAY",
+    "ROBO",
+    "RVN",
+    "SEI",
+    "SKY",
+    "SOON",
+    "SPK",
+    "STABLE",
+    "STEEM",
+    "SUNDOG",
+    "SWAP",
+    "SXT",
+    "TAO",
+    "TEMCO",
+    "THE",
+    "THETA",
+    "TRUMP",
+    "TRX",
+    "UOS",
+    "WCT",
+    "WLFI",
+    "WNCG",
+    "XAN",
+    "XPLA",
+    "XRP",
+    "XVS",
+    "YB",
+    "ZBT",
+    "ZK"
+  ],
+  "updated_at": "2026-04-21T15:29:46.079234",
+  "source_files": 9,
+  "stats": {
+    "0G": {
+      "trades": 9,
+      "win_rate": 11.1,
+      "pf": 0.001,
+      "total_pnl": -51282.0
+    },
+    "A8": {
+      "trades": 70,
+      "win_rate": 47.1,
+      "pf": 0.738,
+      "total_pnl": -72385.0
+    },
+    "ACX": {
+      "trades": 8,
+      "win_rate": 50.0,
+      "pf": 1.028,
+      "total_pnl": 769.0
+    },
+    "ADA": {
+      "trades": 72,
+      "win_rate": 29.2,
+      "pf": 0.247,
+      "total_pnl": -226835.0
+    },
+    "AERO": {
+      "trades": 11,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -42549.0
+    },
+    "AKT": {
+      "trades": 45,
+      "win_rate": 51.1,
+      "pf": 0.576,
+      "total_pnl": -55588.0
+    },
+    "ANIME": {
+      "trades": 36,
+      "win_rate": 41.7,
+      "pf": 0.924,
+      "total_pnl": -8890.0
+    },
+    "ANKR": {
+      "trades": 31,
+      "win_rate": 22.6,
+      "pf": 0.14,
+      "total_pnl": -176852.0
+    },
+    "ATH": {
+      "trades": 77,
+      "win_rate": 63.6,
+      "pf": 1.583,
+      "total_pnl": 109471.0
+    },
+    "AXS": {
+      "trades": 17,
+      "win_rate": 76.5,
+      "pf": 82.206,
+      "total_pnl": 117875.0
+    },
+    "BERA": {
+      "trades": 25,
+      "win_rate": 52.0,
+      "pf": 1.667,
+      "total_pnl": 38277.0
+    },
+    "BLAST": {
+      "trades": 16,
+      "win_rate": 37.5,
+      "pf": 0.422,
+      "total_pnl": -7844.0
+    },
+    "BOB": {
+      "trades": 32,
+      "win_rate": 25.0,
+      "pf": 0.172,
+      "total_pnl": -127548.0
+    },
+    "BOBA": {
+      "trades": 41,
+      "win_rate": 48.8,
+      "pf": 1.04,
+      "total_pnl": 5661.0
+    },
+    "BSV": {
+      "trades": 10,
+      "win_rate": 20.0,
+      "pf": 0.167,
+      "total_pnl": -49037.0
+    },
+    "BTC": {
+      "trades": 143,
+      "win_rate": 34.3,
+      "pf": 0.615,
+      "total_pnl": -116799.0
+    },
+    "BTR": {
+      "trades": 106,
+      "win_rate": 47.2,
+      "pf": 0.452,
+      "total_pnl": -370768.0
+    },
+    "C": {
+      "trades": 63,
+      "win_rate": 52.4,
+      "pf": 0.662,
+      "total_pnl": -105911.0
+    },
+    "CAMP": {
+      "trades": 38,
+      "win_rate": 73.7,
+      "pf": 7.64,
+      "total_pnl": 367931.0
+    },
+    "CFG": {
+      "trades": 41,
+      "win_rate": 48.8,
+      "pf": 0.626,
+      "total_pnl": -57243.0
+    },
+    "CHR": {
+      "trades": 30,
+      "win_rate": 53.3,
+      "pf": 0.708,
+      "total_pnl": -29887.0
+    },
+    "COS": {
+      "trades": 77,
+      "win_rate": 31.2,
+      "pf": 0.168,
+      "total_pnl": -323332.0
+    },
+    "CPOOL": {
+      "trades": 36,
+      "win_rate": 94.4,
+      "pf": 39.436,
+      "total_pnl": 177242.0
+    },
+    "CSPR": {
+      "trades": 36,
+      "win_rate": 33.3,
+      "pf": 0.431,
+      "total_pnl": -100826.0
+    },
+    "CUDIS": {
+      "trades": 18,
+      "win_rate": 55.6,
+      "pf": 0.665,
+      "total_pnl": -22053.0
+    },
+    "CYS": {
+      "trades": 104,
+      "win_rate": 47.1,
+      "pf": 0.587,
+      "total_pnl": -203773.0
+    },
+    "DAO": {
+      "trades": 130,
+      "win_rate": 71.5,
+      "pf": 1.889,
+      "total_pnl": 481728.0
+    },
+    "DEEP": {
+      "trades": 56,
+      "win_rate": 67.9,
+      "pf": 1.972,
+      "total_pnl": 78627.0
+    },
+    "DKA": {
+      "trades": 10,
+      "win_rate": 40.0,
+      "pf": 0.53,
+      "total_pnl": -12482.0
+    },
+    "DOT": {
+      "trades": 17,
+      "win_rate": 70.6,
+      "pf": 1.871,
+      "total_pnl": 19246.0
+    },
+    "EDGE": {
+      "trades": 26,
+      "win_rate": 46.2,
+      "pf": 0.963,
+      "total_pnl": -2851.0
+    },
+    "ENJ": {
+      "trades": 57,
+      "win_rate": 61.4,
+      "pf": 0.963,
+      "total_pnl": -6476.0
+    },
+    "ENSO": {
+      "trades": 68,
+      "win_rate": 32.4,
+      "pf": 0.191,
+      "total_pnl": -262536.0
+    },
+    "ETH": {
+      "trades": 202,
+      "win_rate": 40.6,
+      "pf": 0.679,
+      "total_pnl": -157084.0
+    },
+    "ETHFI": {
+      "trades": 18,
+      "win_rate": 61.1,
+      "pf": 2.002,
+      "total_pnl": 46728.0
+    },
+    "F": {
+      "trades": 46,
+      "win_rate": 41.3,
+      "pf": 1.387,
+      "total_pnl": 53250.0
+    },
+    "FANC": {
+      "trades": 15,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -118755.0
+    },
+    "FLOCK": {
+      "trades": 7,
+      "win_rate": 28.6,
+      "pf": 0.142,
+      "total_pnl": -35319.0
+    },
+    "G": {
+      "trades": 94,
+      "win_rate": 42.6,
+      "pf": 0.877,
+      "total_pnl": -48799.0
+    },
+    "GAS": {
+      "trades": 26,
+      "win_rate": 76.9,
+      "pf": 2.276,
+      "total_pnl": 40980.0
+    },
+    "GTC": {
+      "trades": 12,
+      "win_rate": 16.7,
+      "pf": 0.165,
+      "total_pnl": -77498.0
+    },
+    "GWEI": {
+      "trades": 88,
+      "win_rate": 56.8,
+      "pf": 1.478,
+      "total_pnl": 129066.0
+    },
+    "H": {
+      "trades": 44,
+      "win_rate": 31.8,
+      "pf": 0.348,
+      "total_pnl": -146107.0
+    },
+    "HAEDAL": {
+      "trades": 34,
+      "win_rate": 58.8,
+      "pf": 1.209,
+      "total_pnl": 16054.0
+    },
+    "HOOK": {
+      "trades": 48,
+      "win_rate": 60.4,
+      "pf": 1.096,
+      "total_pnl": 12459.0
+    },
+    "HUMA": {
+      "trades": 128,
+      "win_rate": 50.8,
+      "pf": 0.669,
+      "total_pnl": -147136.0
+    },
+    "HYPER": {
+      "trades": 6,
+      "win_rate": 16.7,
+      "pf": 0.318,
+      "total_pnl": -21310.0
+    },
+    "ICP": {
+      "trades": 11,
+      "win_rate": 27.3,
+      "pf": 0.373,
+      "total_pnl": -33212.0
+    },
+    "ICX": {
+      "trades": 6,
+      "win_rate": 100.0,
+      "pf": null,
+      "total_pnl": 9377.0
+    },
+    "IP": {
+      "trades": 54,
+      "win_rate": 22.2,
+      "pf": 0.153,
+      "total_pnl": -224979.0
+    },
+    "IQ": {
+      "trades": 12,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -102403.0
+    },
+    "IRYS": {
+      "trades": 32,
+      "win_rate": 68.8,
+      "pf": 2.371,
+      "total_pnl": 87822.0
+    },
+    "JTO": {
+      "trades": 25,
+      "win_rate": 36.0,
+      "pf": 0.201,
+      "total_pnl": -83050.0
+    },
+    "KAIA": {
+      "trades": 23,
+      "win_rate": 69.6,
+      "pf": 1.217,
+      "total_pnl": 9028.0
+    },
+    "KITE": {
+      "trades": 48,
+      "win_rate": 43.8,
+      "pf": 0.437,
+      "total_pnl": -119565.0
+    },
+    "LA": {
+      "trades": 14,
+      "win_rate": 71.4,
+      "pf": 3.916,
+      "total_pnl": 40903.0
+    },
+    "LISTA": {
+      "trades": 6,
+      "win_rate": 100.0,
+      "pf": null,
+      "total_pnl": 17838.0
+    },
+    "LWA": {
+      "trades": 24,
+      "win_rate": 50.0,
+      "pf": 0.516,
+      "total_pnl": -37382.0
+    },
+    "ME": {
+      "trades": 12,
+      "win_rate": 8.3,
+      "pf": 0.06,
+      "total_pnl": -65158.0
+    },
+    "MOODENG": {
+      "trades": 24,
+      "win_rate": 25.0,
+      "pf": 0.83,
+      "total_pnl": -20148.0
+    },
+    "NEO": {
+      "trades": 16,
+      "win_rate": 68.8,
+      "pf": 6.695,
+      "total_pnl": 40508.0
+    },
+    "NXPC": {
+      "trades": 17,
+      "win_rate": 58.8,
+      "pf": 0.397,
+      "total_pnl": -55380.0
+    },
+    "OBSR": {
+      "trades": 26,
+      "win_rate": 50.0,
+      "pf": 0.589,
+      "total_pnl": -58786.0
+    },
+    "OGN": {
+      "trades": 34,
+      "win_rate": 47.1,
+      "pf": 0.748,
+      "total_pnl": -40254.0
+    },
+    "ONG": {
+      "trades": 34,
+      "win_rate": 17.6,
+      "pf": 0.515,
+      "total_pnl": -83140.0
+    },
+    "ONT": {
+      "trades": 96,
+      "win_rate": 44.8,
+      "pf": 0.738,
+      "total_pnl": -94128.0
+    },
+    "ORDER": {
+      "trades": 35,
+      "win_rate": 37.1,
+      "pf": 0.631,
+      "total_pnl": -61792.0
+    },
+    "OXT": {
+      "trades": 37,
+      "win_rate": 40.5,
+      "pf": 0.464,
+      "total_pnl": -119104.0
+    },
+    "PEAQ": {
+      "trades": 65,
+      "win_rate": 55.4,
+      "pf": 1.167,
+      "total_pnl": 30494.0
+    },
+    "PENGU": {
+      "trades": 117,
+      "win_rate": 37.6,
+      "pf": 0.478,
+      "total_pnl": -253698.0
+    },
+    "PLUME": {
+      "trades": 15,
+      "win_rate": 33.3,
+      "pf": 0.358,
+      "total_pnl": -36381.0
+    },
+    "POLA": {
+      "trades": 32,
+      "win_rate": 81.2,
+      "pf": 1.071,
+      "total_pnl": 4763.0
+    },
+    "POLYX": {
+      "trades": 26,
+      "win_rate": 19.2,
+      "pf": 0.074,
+      "total_pnl": -156820.0
+    },
+    "PONKE": {
+      "trades": 24,
+      "win_rate": 41.7,
+      "pf": 0.328,
+      "total_pnl": -65997.0
+    },
+    "PUMPBTC": {
+      "trades": 50,
+      "win_rate": 52.0,
+      "pf": 0.762,
+      "total_pnl": -39518.0
+    },
+    "REI": {
+      "trades": 52,
+      "win_rate": 50.0,
+      "pf": 1.091,
+      "total_pnl": 15518.0
+    },
+    "RENDER": {
+      "trades": 19,
+      "win_rate": 94.7,
+      "pf": 141.991,
+      "total_pnl": 87461.0
+    },
+    "RESOLV": {
+      "trades": 184,
+      "win_rate": 49.5,
+      "pf": 0.803,
+      "total_pnl": -145367.0
+    },
+    "REZ": {
+      "trades": 32,
+      "win_rate": 37.5,
+      "pf": 1.061,
+      "total_pnl": 7120.0
+    },
+    "RVN": {
+      "trades": 21,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -128537.0
+    },
+    "SAHARA": {
+      "trades": 83,
+      "win_rate": 50.6,
+      "pf": 0.683,
+      "total_pnl": -120175.0
+    },
+    "SHELL": {
+      "trades": 13,
+      "win_rate": 100.0,
+      "pf": null,
+      "total_pnl": 78491.0
+    },
+    "SIGN": {
+      "trades": 64,
+      "win_rate": 79.7,
+      "pf": 3.841,
+      "total_pnl": 235161.0
+    },
+    "SOL": {
+      "trades": 159,
+      "win_rate": 45.9,
+      "pf": 0.741,
+      "total_pnl": -109967.0
+    },
+    "STABLE": {
+      "trades": 61,
+      "win_rate": 26.2,
+      "pf": 0.38,
+      "total_pnl": -186900.0
+    },
+    "STEEM": {
+      "trades": 11,
+      "win_rate": 9.1,
+      "pf": 0.1,
+      "total_pnl": -52310.0
+    },
+    "SUI": {
+      "trades": 83,
+      "win_rate": 44.6,
+      "pf": 0.812,
+      "total_pnl": -39526.0
+    },
+    "SUNDOG": {
+      "trades": 14,
+      "win_rate": 42.9,
+      "pf": 0.215,
+      "total_pnl": -44042.0
+    },
+    "TAO": {
+      "trades": 61,
+      "win_rate": 29.5,
+      "pf": 0.352,
+      "total_pnl": -171203.0
+    },
+    "TAVA": {
+      "trades": 35,
+      "win_rate": 45.7,
+      "pf": 1.199,
+      "total_pnl": 30256.0
+    },
+    "TEMCO": {
+      "trades": 11,
+      "win_rate": 27.3,
+      "pf": 0.451,
+      "total_pnl": -57299.0
+    },
+    "THE": {
+      "trades": 21,
+      "win_rate": 42.9,
+      "pf": 0.221,
+      "total_pnl": -59908.0
+    },
+    "TOWNS": {
+      "trades": 32,
+      "win_rate": 40.6,
+      "pf": 1.107,
+      "total_pnl": 10863.0
+    },
+    "TRUMP": {
+      "trades": 63,
+      "win_rate": 28.6,
+      "pf": 0.336,
+      "total_pnl": -157891.0
+    },
+    "TRX": {
+      "trades": 12,
+      "win_rate": 50.0,
+      "pf": 0.416,
+      "total_pnl": -18856.0
+    },
+    "TURBO": {
+      "trades": 55,
+      "win_rate": 69.1,
+      "pf": 1.702,
+      "total_pnl": 72400.0
+    },
+    "VIRTUAL": {
+      "trades": 131,
+      "win_rate": 49.6,
+      "pf": 0.728,
+      "total_pnl": -105051.0
+    },
+    "WAXP": {
+      "trades": 29,
+      "win_rate": 44.8,
+      "pf": 0.906,
+      "total_pnl": -11943.0
+    },
+    "WLD": {
+      "trades": 171,
+      "win_rate": 52.6,
+      "pf": 0.708,
+      "total_pnl": -142840.0
+    },
+    "WLFI": {
+      "trades": 6,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -43563.0
+    },
+    "XAI": {
+      "trades": 21,
+      "win_rate": 47.6,
+      "pf": 0.576,
+      "total_pnl": -43643.0
+    },
+    "XAN": {
+      "trades": 68,
+      "win_rate": 39.7,
+      "pf": 0.196,
+      "total_pnl": -389136.0
+    },
+    "XCN": {
+      "trades": 22,
+      "win_rate": 54.5,
+      "pf": 0.681,
+      "total_pnl": -23036.0
+    },
+    "XLM": {
+      "trades": 41,
+      "win_rate": 46.3,
+      "pf": 0.639,
+      "total_pnl": -50937.0
+    },
+    "XPLA": {
+      "trades": 17,
+      "win_rate": 35.3,
+      "pf": 0.377,
+      "total_pnl": -84541.0
+    },
+    "XRP": {
+      "trades": 181,
+      "win_rate": 25.4,
+      "pf": 0.3,
+      "total_pnl": -373214.0
+    },
+    "XTER": {
+      "trades": 55,
+      "win_rate": 58.2,
+      "pf": 0.92,
+      "total_pnl": -19405.0
+    },
+    "ZETA": {
+      "trades": 52,
+      "win_rate": 48.1,
+      "pf": 1.359,
+      "total_pnl": 53024.0
+    },
+    "ADP": {
+      "trades": 18,
+      "win_rate": 38.9,
+      "pf": 0.842,
+      "total_pnl": -16416.0
+    },
+    "AGI": {
+      "trades": 13,
+      "win_rate": 38.5,
+      "pf": 0.117,
+      "total_pnl": -43935.0
+    },
+    "AVAIL": {
+      "trades": 22,
+      "win_rate": 63.6,
+      "pf": 0.612,
+      "total_pnl": -45530.0
+    },
+    "CVC": {
+      "trades": 20,
+      "win_rate": 75.0,
+      "pf": 1.013,
+      "total_pnl": 436.0
+    },
+    "DOGE": {
+      "trades": 13,
+      "win_rate": 7.7,
+      "pf": 0.002,
+      "total_pnl": -56049.0
+    },
+    "DOOD": {
+      "trades": 14,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -104218.0
+    },
+    "ENA": {
+      "trades": 24,
+      "win_rate": 45.8,
+      "pf": 0.815,
+      "total_pnl": -17319.0
+    },
+    "EPT": {
+      "trades": 15,
+      "win_rate": 86.7,
+      "pf": 83.888,
+      "total_pnl": 70352.0
+    },
+    "IOTX": {
+      "trades": 10,
+      "win_rate": 60.0,
+      "pf": 0.867,
+      "total_pnl": -1609.0
+    },
+    "MON": {
+      "trades": 24,
+      "win_rate": 62.5,
+      "pf": 2.068,
+      "total_pnl": 52823.0
+    },
+    "NIL": {
+      "trades": 16,
+      "win_rate": 37.5,
+      "pf": 0.905,
+      "total_pnl": -5995.0
+    },
+    "PROVE": {
+      "trades": 13,
+      "win_rate": 23.1,
+      "pf": 0.333,
+      "total_pnl": -61039.0
+    },
+    "SOLV": {
+      "trades": 111,
+      "win_rate": 73.9,
+      "pf": 1.449,
+      "total_pnl": 207555.0
+    },
+    "SXT": {
+      "trades": 10,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -66818.0
+    },
+    "AL": {
+      "trades": 15,
+      "win_rate": 33.3,
+      "pf": 0.599,
+      "total_pnl": -24086.0
+    },
+    "AMP": {
+      "trades": 12,
+      "win_rate": 33.3,
+      "pf": 0.408,
+      "total_pnl": -50757.0
+    },
+    "AZIT": {
+      "trades": 26,
+      "win_rate": 34.6,
+      "pf": 0.544,
+      "total_pnl": -28567.0
+    },
+    "B3": {
+      "trades": 18,
+      "win_rate": 55.6,
+      "pf": 1.83,
+      "total_pnl": 33461.0
+    },
+    "BIOT": {
+      "trades": 9,
+      "win_rate": 11.1,
+      "pf": 0.031,
+      "total_pnl": -90950.0
+    },
+    "BLY": {
+      "trades": 16,
+      "win_rate": 31.2,
+      "pf": 0.617,
+      "total_pnl": -89375.0
+    },
+    "CRTS": {
+      "trades": 9,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -95821.0
+    },
+    "D": {
+      "trades": 63,
+      "win_rate": 39.7,
+      "pf": 0.727,
+      "total_pnl": -82671.0
+    },
+    "DBR": {
+      "trades": 14,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -87454.0
+    },
+    "EGG": {
+      "trades": 8,
+      "win_rate": 100.0,
+      "pf": null,
+      "total_pnl": 10726.0
+    },
+    "FITFI": {
+      "trades": 38,
+      "win_rate": 47.4,
+      "pf": 0.838,
+      "total_pnl": -32119.0
+    },
+    "FORT": {
+      "trades": 14,
+      "win_rate": 28.6,
+      "pf": 0.455,
+      "total_pnl": -50248.0
+    },
+    "GOAT": {
+      "trades": 68,
+      "win_rate": 57.4,
+      "pf": 0.853,
+      "total_pnl": -52880.0
+    },
+    "HEMI": {
+      "trades": 49,
+      "win_rate": 57.1,
+      "pf": 0.984,
+      "total_pnl": -2748.0
+    },
+    "ILV": {
+      "trades": 37,
+      "win_rate": 45.9,
+      "pf": 1.364,
+      "total_pnl": 44327.0
+    },
+    "KAT": {
+      "trades": 16,
+      "win_rate": 31.2,
+      "pf": 0.248,
+      "total_pnl": -55719.0
+    },
+    "KERNEL": {
+      "trades": 29,
+      "win_rate": 27.6,
+      "pf": 0.24,
+      "total_pnl": -126056.0
+    },
+    "KNC": {
+      "trades": 8,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -94460.0
+    },
+    "MINA": {
+      "trades": 33,
+      "win_rate": 69.7,
+      "pf": 1.065,
+      "total_pnl": 13500.0
+    },
+    "NOM": {
+      "trades": 44,
+      "win_rate": 56.8,
+      "pf": 0.622,
+      "total_pnl": -125365.0
+    },
+    "ONDO": {
+      "trades": 17,
+      "win_rate": 5.9,
+      "pf": 0.064,
+      "total_pnl": -89749.0
+    },
+    "ORBS": {
+      "trades": 21,
+      "win_rate": 42.9,
+      "pf": 0.917,
+      "total_pnl": -4477.0
+    },
+    "PCI": {
+      "trades": 26,
+      "win_rate": 26.9,
+      "pf": 0.212,
+      "total_pnl": -112331.0
+    },
+    "POPCAT": {
+      "trades": 33,
+      "win_rate": 45.5,
+      "pf": 5.207,
+      "total_pnl": 391804.0
+    },
+    "RAY": {
+      "trades": 23,
+      "win_rate": 30.4,
+      "pf": 0.146,
+      "total_pnl": -89825.0
+    },
+    "RPL": {
+      "trades": 21,
+      "win_rate": 66.7,
+      "pf": 3.257,
+      "total_pnl": 123324.0
+    },
+    "RSS3": {
+      "trades": 17,
+      "win_rate": 58.8,
+      "pf": 0.624,
+      "total_pnl": -33295.0
+    },
+    "SKL": {
+      "trades": 39,
+      "win_rate": 89.7,
+      "pf": 10.806,
+      "total_pnl": 178983.0
+    },
+    "SKY": {
+      "trades": 10,
+      "win_rate": 10.0,
+      "pf": 0.059,
+      "total_pnl": -45576.0
+    },
+    "SUPER": {
+      "trades": 21,
+      "win_rate": 52.4,
+      "pf": 0.961,
+      "total_pnl": -3245.0
+    },
+    "TDROP": {
+      "trades": 16,
+      "win_rate": 50.0,
+      "pf": 4.122,
+      "total_pnl": 272261.0
+    },
+    "UOS": {
+      "trades": 31,
+      "win_rate": 12.9,
+      "pf": 0.1,
+      "total_pnl": -286747.0
+    },
+    "WIKEN": {
+      "trades": 23,
+      "win_rate": 73.9,
+      "pf": 3.327,
+      "total_pnl": 112728.0
+    },
+    "WNCG": {
+      "trades": 6,
+      "win_rate": 33.3,
+      "pf": 0.274,
+      "total_pnl": -48233.0
+    },
+    "XVS": {
+      "trades": 54,
+      "win_rate": 51.9,
+      "pf": 0.381,
+      "total_pnl": -362950.0
+    },
+    "ZRC": {
+      "trades": 14,
+      "win_rate": 85.7,
+      "pf": 35.521,
+      "total_pnl": 104162.0
+    },
+    "ZTX": {
+      "trades": 20,
+      "win_rate": 70.0,
+      "pf": 4.966,
+      "total_pnl": 61379.0
+    },
+    "ACE": {
+      "trades": 6,
+      "win_rate": 16.7,
+      "pf": 0.056,
+      "total_pnl": -40121.0
+    },
+    "ALICE": {
+      "trades": 15,
+      "win_rate": 60.0,
+      "pf": 2.549,
+      "total_pnl": 47329.0
+    },
+    "ALT": {
+      "trades": 16,
+      "win_rate": 37.5,
+      "pf": 0.374,
+      "total_pnl": -27053.0
+    },
+    "API3": {
+      "trades": 11,
+      "win_rate": 81.8,
+      "pf": 3.767,
+      "total_pnl": 43014.0
+    },
+    "AUDIO": {
+      "trades": 11,
+      "win_rate": 27.3,
+      "pf": 0.239,
+      "total_pnl": -69206.0
+    },
+    "AVL": {
+      "trades": 22,
+      "win_rate": 27.3,
+      "pf": 0.542,
+      "total_pnl": -49322.0
+    },
+    "BEL": {
+      "trades": 16,
+      "win_rate": 68.8,
+      "pf": 2.356,
+      "total_pnl": 40683.0
+    },
+    "BIO": {
+      "trades": 18,
+      "win_rate": 33.3,
+      "pf": 0.47,
+      "total_pnl": -53946.0
+    },
+    "BLUR": {
+      "trades": 35,
+      "win_rate": 37.1,
+      "pf": 0.554,
+      "total_pnl": -65041.0
+    },
+    "CKB": {
+      "trades": 6,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -9097.0
+    },
+    "COMP": {
+      "trades": 9,
+      "win_rate": 55.6,
+      "pf": 0.645,
+      "total_pnl": -6081.0
+    },
+    "CORE": {
+      "trades": 22,
+      "win_rate": 40.9,
+      "pf": 0.746,
+      "total_pnl": -23543.0
+    },
+    "CTSI": {
+      "trades": 24,
+      "win_rate": 75.0,
+      "pf": 2.032,
+      "total_pnl": 49734.0
+    },
+    "DEXE": {
+      "trades": 9,
+      "win_rate": 66.7,
+      "pf": 1.801,
+      "total_pnl": 14652.0
+    },
+    "DRIFT": {
+      "trades": 22,
+      "win_rate": 54.5,
+      "pf": 0.754,
+      "total_pnl": -31877.0
+    },
+    "EDEN": {
+      "trades": 6,
+      "win_rate": 50.0,
+      "pf": 1.093,
+      "total_pnl": 2155.0
+    },
+    "EDU": {
+      "trades": 15,
+      "win_rate": 20.0,
+      "pf": 0.409,
+      "total_pnl": -34379.0
+    },
+    "ESP": {
+      "trades": 7,
+      "win_rate": 57.1,
+      "pf": 0.038,
+      "total_pnl": -20004.0
+    },
+    "EUL": {
+      "trades": 9,
+      "win_rate": 66.7,
+      "pf": 2.467,
+      "total_pnl": 26016.0
+    },
+    "FF": {
+      "trades": 9,
+      "win_rate": 55.6,
+      "pf": 1.134,
+      "total_pnl": 4458.0
+    },
+    "GHX": {
+      "trades": 10,
+      "win_rate": 70.0,
+      "pf": 1.922,
+      "total_pnl": 19006.0
+    },
+    "GRND": {
+      "trades": 17,
+      "win_rate": 47.1,
+      "pf": 0.456,
+      "total_pnl": -43165.0
+    },
+    "HIGH": {
+      "trades": 15,
+      "win_rate": 60.0,
+      "pf": 0.918,
+      "total_pnl": -7755.0
+    },
+    "HOLO": {
+      "trades": 6,
+      "win_rate": 50.0,
+      "pf": 0.51,
+      "total_pnl": -8397.0
+    },
+    "ID": {
+      "trades": 6,
+      "win_rate": 83.3,
+      "pf": 251.673,
+      "total_pnl": 71151.0
+    },
+    "IN": {
+      "trades": 14,
+      "win_rate": 28.6,
+      "pf": 0.277,
+      "total_pnl": -63676.0
+    },
+    "JOE": {
+      "trades": 16,
+      "win_rate": 6.2,
+      "pf": 0.047,
+      "total_pnl": -98333.0
+    },
+    "KSM": {
+      "trades": 6,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -41337.0
+    },
+    "LPT": {
+      "trades": 12,
+      "win_rate": 50.0,
+      "pf": 1.269,
+      "total_pnl": 10107.0
+    },
+    "MAGIC": {
+      "trades": 16,
+      "win_rate": 37.5,
+      "pf": 1.081,
+      "total_pnl": 4132.0
+    },
+    "MAPO": {
+      "trades": 7,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -20078.0
+    },
+    "MAV": {
+      "trades": 8,
+      "win_rate": 37.5,
+      "pf": 0.189,
+      "total_pnl": -28964.0
+    },
+    "MERL": {
+      "trades": 35,
+      "win_rate": 48.6,
+      "pf": 0.963,
+      "total_pnl": -5040.0
+    },
+    "METIS": {
+      "trades": 7,
+      "win_rate": 42.9,
+      "pf": 0.574,
+      "total_pnl": -10362.0
+    },
+    "MEV": {
+      "trades": 10,
+      "win_rate": 70.0,
+      "pf": 4.413,
+      "total_pnl": 42858.0
+    },
+    "MOVE": {
+      "trades": 10,
+      "win_rate": 40.0,
+      "pf": 0.641,
+      "total_pnl": -14454.0
+    },
+    "MVC": {
+      "trades": 7,
+      "win_rate": 100.0,
+      "pf": null,
+      "total_pnl": 43916.0
+    },
+    "NCT": {
+      "trades": 10,
+      "win_rate": 40.0,
+      "pf": 0.801,
+      "total_pnl": -19734.0
+    },
+    "OPEN": {
+      "trades": 6,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -37705.0
+    },
+    "PARTI": {
+      "trades": 10,
+      "win_rate": 40.0,
+      "pf": 0.537,
+      "total_pnl": -30008.0
+    },
+    "PHA": {
+      "trades": 16,
+      "win_rate": 43.8,
+      "pf": 0.756,
+      "total_pnl": -13335.0
+    },
+    "PIEVERSE": {
+      "trades": 15,
+      "win_rate": 33.3,
+      "pf": 0.389,
+      "total_pnl": -60752.0
+    },
+    "PROMPT": {
+      "trades": 7,
+      "win_rate": 14.3,
+      "pf": 0.184,
+      "total_pnl": -36277.0
+    },
+    "PUFFER": {
+      "trades": 24,
+      "win_rate": 50.0,
+      "pf": 0.756,
+      "total_pnl": -23446.0
+    },
+    "PYR": {
+      "trades": 6,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -39208.0
+    },
+    "RAD": {
+      "trades": 9,
+      "win_rate": 55.6,
+      "pf": 11.013,
+      "total_pnl": 34901.0
+    },
+    "RED": {
+      "trades": 25,
+      "win_rate": 56.0,
+      "pf": 0.858,
+      "total_pnl": -8793.0
+    },
+    "REQ": {
+      "trades": 21,
+      "win_rate": 71.4,
+      "pf": 2.382,
+      "total_pnl": 63665.0
+    },
+    "ROBO": {
+      "trades": 20,
+      "win_rate": 35.0,
+      "pf": 0.439,
+      "total_pnl": -47808.0
+    },
+    "SEI": {
+      "trades": 6,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -28475.0
+    },
+    "SIX": {
+      "trades": 12,
+      "win_rate": 83.3,
+      "pf": 4.677,
+      "total_pnl": 47571.0
+    },
+    "SOON": {
+      "trades": 40,
+      "win_rate": 42.5,
+      "pf": 0.449,
+      "total_pnl": -114221.0
+    },
+    "SPK": {
+      "trades": 9,
+      "win_rate": 44.4,
+      "pf": 0.332,
+      "total_pnl": -12104.0
+    },
+    "SPURS": {
+      "trades": 13,
+      "win_rate": 100.0,
+      "pf": null,
+      "total_pnl": 114031.0
+    },
+    "SWAP": {
+      "trades": 13,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -121584.0
+    },
+    "THETA": {
+      "trades": 6,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -46318.0
+    },
+    "TRAC": {
+      "trades": 13,
+      "win_rate": 53.8,
+      "pf": 20.416,
+      "total_pnl": 167678.0
+    },
+    "TREE": {
+      "trades": 16,
+      "win_rate": 56.2,
+      "pf": 0.863,
+      "total_pnl": -9388.0
+    },
+    "TRUST": {
+      "trades": 11,
+      "win_rate": 72.7,
+      "pf": 1.461,
+      "total_pnl": 9381.0
+    },
+    "VVV": {
+      "trades": 12,
+      "win_rate": 100.0,
+      "pf": null,
+      "total_pnl": 58845.0
+    },
+    "WAXL": {
+      "trades": 24,
+      "win_rate": 41.7,
+      "pf": 0.942,
+      "total_pnl": -5389.0
+    },
+    "WCT": {
+      "trades": 6,
+      "win_rate": 50.0,
+      "pf": 0.161,
+      "total_pnl": -15822.0
+    },
+    "WET": {
+      "trades": 9,
+      "win_rate": 66.7,
+      "pf": 1.358,
+      "total_pnl": 8279.0
+    },
+    "XION": {
+      "trades": 31,
+      "win_rate": 51.6,
+      "pf": 1.711,
+      "total_pnl": 63891.0
+    },
+    "XPL": {
+      "trades": 7,
+      "win_rate": 42.9,
+      "pf": 0.967,
+      "total_pnl": -889.0
+    },
+    "YB": {
+      "trades": 35,
+      "win_rate": 34.3,
+      "pf": 0.488,
+      "total_pnl": -86594.0
+    },
+    "ZAMA": {
+      "trades": 19,
+      "win_rate": 73.7,
+      "pf": 3.31,
+      "total_pnl": 67694.0
+    },
+    "ZBT": {
+      "trades": 6,
+      "win_rate": 0.0,
+      "pf": 0.0,
+      "total_pnl": -39417.0
+    },
+    "ZK": {
+      "trades": 7,
+      "win_rate": 14.3,
+      "pf": 0.109,
+      "total_pnl": -31320.0
+    }
+  }
+}

@@ -1,15 +1,30 @@
-# main.py
+# main.py - Swing Trading v3.0 Live
+"""
+1H 스윙 라이브 트레이딩 루프
+- CSV (data_fetcher 유지) + API 현재가
+- 1H 봉 close 시 신호 체크, 매 사이클마다 보호 손절 체크
+- 종목당 자본 25%, 최대 4종목 동시
+"""
 import time
 import logging
 import os
-from datetime import datetime
+import builtins
+from datetime import datetime, timedelta
+
+import pandas as pd
+
 from config import (
     INTERVAL_SECONDS, LOG_PATH, TOP_TICKER_LIMIT,
     MAX_BUY_COUNT, STOP_LOSS, TRAILING_STOP_TRIGGER,
-    TRAILING_STOP_DROP
+    TRAILING_STOP_DROP, INITIAL_BALANCE,
+    ATR_STOP_MULTIPLIER, ATR_STOP_MIN, ATR_STOP_MAX,
+    MIN_HOLD_MINUTES, STRATEGY_SELL_ENABLED,
+    TICKER_REFRESH_CYCLES,
+    TIME_STOP_HOURS, TIME_STOP_THRESHOLD,
+    BACKTEST_MIN_1H_BARS,
 )
-from collector import get_current_price, get_ohlcv, get_ohlcv_1h, get_smart_tickers
-from strategy import check_signal, calculate_indicators, get_market_trend
+from collector import get_current_price, get_swing_data, get_smart_tickers, get_btc_trend
+from strategy import check_signal, get_atr, get_daily_trend
 from paper_trader import PortfolioManager
 
 os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
@@ -18,258 +33,271 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
         logging.FileHandler(LOG_PATH, encoding="utf-8"),
-        logging.StreamHandler()
-    ]
+        logging.StreamHandler(),
+    ],
 )
 
-def save_cycle_info(cycle, tickers):
+_original_print = builtins.print
+def print(*args, **kwargs):
+    _original_print(*args, **kwargs)
+    logging.info(" ".join(str(a) for a in args))
+builtins.print = print
+
+
+def save_cycle_info(cycle, tickers, start_time=None):
     """대시보드용 사이클 정보 저장"""
     import json
     os.makedirs("data", exist_ok=True)
+    running_hours = round((datetime.now() - start_time).total_seconds() / 3600, 2) if start_time else 0
     with open("data/cycle_info.json", "w") as f:
         json.dump({
             "cycle": cycle,
             "tickers": tickers,
-            "last_check": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            "last_check": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "start_time": start_time.strftime("%Y-%m-%d %H:%M:%S") if start_time else "",
+            "running_hours": running_hours,
+            "strategy": "swing_v3.0",
         }, f, ensure_ascii=False)
 
-def get_all_active_tickers(pm, top_tickers):
-    """
-    실제로 관리해야 할 전체 종목 반환
-    - 현재 포지션 보유 중인 종목 (top_tickers에 없어도 포함)
-    - top_tickers 신규 종목
-    """
-    positions = pm.portfolio["positions"]
-    # 현재 보유 중인 종목
-    active = [s for s, p in positions.items() if p.get("quantity", 0) > 0]
-    # top_tickers와 합치기 (중복 제거)
-    all_tickers = list(dict.fromkeys(active + top_tickers))
-    return all_tickers
 
-def check_sell_conditions(pm, symbol, price, df_5m, df_1h):
+def get_all_active_tickers(pm, top_tickers):
+    """관리 대상: 보유 포지션 + 신규 후보"""
+    positions = pm.portfolio["positions"]
+    active = [s for s, p in positions.items() if p.get("quantity", 0) > 0]
+    return list(dict.fromkeys(active + top_tickers))
+
+
+def is_new_1h_bar(df_1h, last_seen_time):
+    """1H 봉이 새로 마감됐는지 확인"""
+    if df_1h is None or len(df_1h) == 0:
+        return False, last_seen_time
+    latest = df_1h["time"].iloc[-1]
+    if last_seen_time is None or latest > last_seen_time:
+        return True, latest
+    return False, last_seen_time
+
+
+def check_sell_conditions(pm, symbol, price, df_1h):
     """
-    매도 조건 종합 체크
-    1. 강제 청산 (48시간)
-    2. 트레일링 스탑
-    3. 손절
-    4. 동적 익절
-    5. 전략 매도 신호
+    매도 조건 (스윙 v3.0):
+    1. 강제 청산 (FORCE_SELL_HOURS)
+    2. 트레일링 스탑 (+7% 트리거, -3% drop)
+    3. ATR 동적 손절
+    4. 횡보 정리 (TIME_STOP_HOURS 이상 + 수익 ±2% 이내)
+    5. 동적 익절
     """
     pos = pm.portfolio["positions"].get(symbol)
     if not pos or pos.get("quantity", 0) <= 0:
         return None
 
-    avg = pos["avg_buy_price"]
+    avg = pos.get("avg_buy_price", 0)
+    if avg <= 0:
+        return None
+
     peak = pm.get_peak_price(symbol)
     profit_rate = (price - avg) / avg
     hours = pm.get_holding_hours(symbol)
     take_profit = pm.get_dynamic_take_profit(symbol)
 
-    # 1. 강제 청산 (48시간)
+    # 1) 강제 청산
     if pm.is_force_sell(symbol):
-        print(f"  └ ⏰ 강제 청산! {hours:.1f}시간 보유")
+        print(f"  └ ⏰ 강제 청산 ({hours:.1f}h 보유)")
         return ("sell_all", "강제청산")
 
-    # 2. 트레일링 스탑
+    # 2) 트레일링 스탑
     if peak > 0:
         peak_profit = (peak - avg) / avg
         drop_from_peak = (price - peak) / peak
         if peak_profit >= TRAILING_STOP_TRIGGER and drop_from_peak <= -TRAILING_STOP_DROP:
-            print(f"  └ 🎯 트레일링 스탑! 고점: {peak:,.0f} → 현재: {price:,.0f}")
+            print(f"  └ 🎯 트레일링 스탑 (고점:{peak:,.0f} 현재:{price:,.0f})")
             return ("sell_all", "트레일링스탑")
 
-    # 3. 손절
-    if profit_rate <= STOP_LOSS:
-        print(f"  └ 🔴 손절! {profit_rate*100:.2f}%")
+    # 3) ATR 동적 손절
+    atr_stop = STOP_LOSS
+    atr = get_atr(df_1h)
+    if atr and price > 0:
+        atr_pct = -(ATR_STOP_MULTIPLIER * atr) / price
+        atr_stop = max(ATR_STOP_MAX, min(ATR_STOP_MIN, atr_pct))
+    if profit_rate <= atr_stop:
+        print(f"  └ 🔴 손절 ({profit_rate*100:.2f}%, ATR기준:{atr_stop*100:.1f}%)")
         return ("sell_all", "손절")
 
-    # 4. 동적 익절
-    if profit_rate >= take_profit:
-        print(f"  └ 🟢 익절! {profit_rate*100:.2f}% (기준: +{take_profit*100:.1f}%)")
-        return ("sell_all", f"익절({hours:.0f}h)")
+    # 4) 횡보 정리 (수익 ±2% 이내)
+    if hours >= TIME_STOP_HOURS and abs(profit_rate) <= TIME_STOP_THRESHOLD:
+        print(f"  └ ⏳ 횡보 정리 ({hours:.1f}h, {profit_rate*100:+.2f}%)")
+        return ("sell_all", f"횡보정리({hours:.0f}h)")
 
-    # 5. 전략 매도 신호
-    avg_buy = pm.get_avg_buy_price(symbol)
-    signal = check_signal(df_5m, price, avg_buy, df_1h, peak)
-    if signal == "SELL":
-        return ("sell_half", "전략매도")
+    # 5) 동적 익절
+    if profit_rate >= take_profit:
+        print(f"  └ 🟢 익절 ({profit_rate*100:.2f}%, 기준:+{take_profit*100:.1f}%)")
+        return ("sell_all", f"익절({hours:.0f}h)")
 
     return None
 
-REPLACE_LOSS_THRESHOLD = -0.01  # -1% 이하 손실 시 즉시 교체
 
-def handle_ticker_refresh(pm, top_tickers):
-    """
-    종목 재선정 시 교체 처리
-    - 손실 -1% 이하: 즉시 청산 후 교체
-    - 수익 중 or 손실 -1% 미만: 3시간 보유 후 교체
-    """
-    positions = pm.portfolio["positions"]
-    active = [s for s, p in positions.items() if p.get("quantity", 0) > 0]
+def get_price_with_retry(ticker, retries=3):
+    for attempt in range(retries):
+        p = get_current_price(ticker)
+        if p:
+            return p
+        if attempt < retries - 1:
+            time.sleep(1)
+    return None
 
-    replaced = []
-    for symbol in active:
-        if symbol not in top_tickers:
-            price = get_current_price(symbol)
-            if not price:
-                continue
-
-            hours = pm.get_holding_hours(symbol)
-            avg = pm.get_avg_buy_price(symbol)
-            profit_rate = (price - avg) / avg if avg else 0
-
-            if profit_rate <= REPLACE_LOSS_THRESHOLD:
-                # 손실 -1% 이하 → 즉시 교체
-                print(f"  └ 🔄 [{symbol}] 즉시 교체 청산! "
-                      f"손실 {profit_rate*100:.2f}% (기준: -1%)")
-                pm.sell_all(symbol, price, reason="종목교체(손실)")
-                replaced.append(symbol)
-            elif hours >= 3:
-                # 수익 중이지만 3시간 이상 보유 → 교체
-                print(f"  └ 🔄 [{symbol}] 교체 청산 "
-                      f"({hours:.1f}h 보유, {profit_rate*100:+.2f}%)")
-                pm.sell_all(symbol, price, reason="종목교체(시간)")
-                replaced.append(symbol)
-            else:
-                # 수익 중 + 3시간 미만 → 대기
-                print(f"  └ ⏳ [{symbol}] 교체 대기 "
-                      f"({profit_rate*100:+.2f}% | {hours:.1f}h / 3h)")
-
-    return replaced
 
 def run():
-    print("\n" + "="*55)
-    print("   🤖 코인 자동매매 시뮬레이터 시작!")
-    print(f"   최대 {TOP_TICKER_LIMIT}개 종목 | 통합 포트폴리오")
-    print(f"   동적 익절 | 48시간 강제청산 | 트레일링스탑")
-    print("="*55)
-    print("   종료하려면 Ctrl+C 를 누르세요")
-    print("="*55 + "\n")
+    print("\n" + "=" * 60)
+    print("   🤖 코인 자동매매 시뮬레이터 (Swing v3.0)")
+    print(f"   1H 시그널 + 1D 추세 필터 | 최대 {TOP_TICKER_LIMIT}종 동시")
+    print(f"   주기: {INTERVAL_SECONDS}초 | 보유한도: {TICKER_REFRESH_CYCLES} 사이클마다 종목 재선정")
+    print("=" * 60)
+    print("   종료: Ctrl+C")
+    print("=" * 60 + "\n")
 
     pm = PortfolioManager()
     top_tickers = []
     cycle = 0
-    TICKER_REFRESH = 10
+    START_TIME = datetime.now()
+    last_1h_bar_time = {}  # 종목별 마지막 1H 봉 시간
 
     while True:
         try:
             cycle += 1
-            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            print(f"\n[{now}] 🔄 {cycle}번째 체크")
+            now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            print(f"\n[{now_str}] 🔄 사이클 {cycle}")
 
-            # 1. 종목 재선정 (1번째 or 10사이클마다)
-            if cycle == 1 or cycle % TICKER_REFRESH == 0:
+            # 1) 종목 재선정 (첫 사이클 + 주기마다)
+            if cycle == 1 or cycle % TICKER_REFRESH_CYCLES == 0:
                 top_tickers = get_smart_tickers(limit=TOP_TICKER_LIMIT)
-                print(f"  └ 신규 선정 종목: {top_tickers}")
+                print(f"  └ 신규 종목 풀: {top_tickers}")
 
-                # 기존 보유 종목 중 새 리스트에 없는 것 교체 처리
-                handle_ticker_refresh(pm, top_tickers)
+            save_cycle_info(cycle, top_tickers, START_TIME)
 
-            save_cycle_info(cycle, top_tickers)
-
-            # ★ 핵심 수정: 보유 중인 모든 종목 + 신규 종목 합쳐서 관리
+            # 2) 관리 대상 종목 (보유 + 신규 후보)
             all_tickers = get_all_active_tickers(pm, top_tickers)
 
-            # 현재가 수집 (전체 종목)
+            # 3) 현재가 수집
             prices = {}
-            for ticker in all_tickers:
-                p = get_current_price(ticker)
+            for t in all_tickers:
+                p = get_price_with_retry(t)
                 if p:
-                    prices[ticker] = p
+                    prices[t] = p
 
-            # 2. 종목별 매매 (보유 중인 모든 종목 관리)
+            # 4) 글로벌 손절 (전체 포트폴리오 -10% 도달 시)
+            if pm.global_stop_loss_sell(prices):
+                print(f"\n  🚨 글로벌 손절 발동, 모든 포지션 청산")
+                time.sleep(INTERVAL_SECONDS)
+                continue
+
+            # 5) 종목별 처리
             for ticker in all_tickers:
                 price = prices.get(ticker)
-                df_5m = get_ohlcv(ticker)
-                df_1h = get_ohlcv_1h(ticker)
-
-                if price is None or df_5m is None:
-                    print(f"  └ [{ticker}] 데이터 수집 실패, 스킵")
+                if price is None:
+                    print(f"  └ [{ticker}] 가격 조회 실패, 스킵")
                     continue
 
-                # top_tickers에 없는 종목은 매도만 체크 (매수 안 함)
-                is_active_ticker = ticker in top_tickers
+                df_1h = get_swing_data(ticker)
+                if df_1h is None or len(df_1h) < BACKTEST_MIN_1H_BARS:
+                    print(f"  └ [{ticker}] 1H 데이터 부족, 스킵")
+                    continue
 
-                # 고점 업데이트
+                is_active = ticker in top_tickers
                 pm.update_peak_price(ticker, price)
-
                 avg = pm.get_avg_buy_price(ticker)
-                buy_count = pm.get_buy_count(ticker)
                 hours = pm.get_holding_hours(ticker)
-                take_profit = pm.get_dynamic_take_profit(ticker)
+                tp = pm.get_dynamic_take_profit(ticker)
 
-                # top_tickers에 없는 잔여 보유 종목은 표시만 간략하게
-                if not is_active_ticker:
-                    profit_rate = (price - avg) / avg * 100 if avg else 0
-                    print(f"\n  ── [{ticker}] 잔여 보유 (교체 대기) ──")
-                    print(f"  └ 현재가: {price:,.0f}원 | 수익률: {profit_rate:+.2f}% | 보유: {hours:.1f}h")
-                else:
-                    print(f"\n  ── [{ticker}] 분석 중 ──")
-                    print(f"  └ 현재가: {price:,.0f}원 | 분할매수: {buy_count}/{MAX_BUY_COUNT}회")
-                    if avg:
-                        profit_rate = (price - avg) / avg * 100
-                        print(f"  └ 평균단가: {avg:,.0f}원 | 수익률: {profit_rate:+.2f}% | "
-                              f"보유: {hours:.1f}h | 익절기준: +{take_profit*100:.1f}%")
-
-                # 매도 조건 체크 (보유 중인 모든 종목)
+                # 상태 출력
                 if avg:
-                    sell_result = check_sell_conditions(
-                        pm, ticker, price, df_5m, df_1h
-                    )
+                    profit_rate = (price - avg) / avg * 100
+                    tag = "보유 중" if is_active else "잔여 보유"
+                    print(f"\n  ── [{ticker}] {tag} ──")
+                    print(f"  └ 현재가: {price:,.0f}원 | 수익: {profit_rate:+.2f}% | "
+                          f"보유: {hours:.1f}h | 익절기준: +{tp*100:.1f}%")
+                else:
+                    print(f"\n  ── [{ticker}] 분석 ──")
+                    print(f"  └ 현재가: {price:,.0f}원")
+
+                # 5-1) 보호 손절 체크 (현재가 기준, 즉시 반응)
+                if avg:
+                    sell_result = check_sell_conditions(pm, ticker, price, df_1h)
                     if sell_result:
                         action, reason = sell_result
-                        if action == "sell_all":
-                            pm.sell_all(ticker, price, reason=reason)
-                        else:
-                            pm.sell(ticker, price, reason=reason)
+                        pm.sell_all(ticker, price, reason=reason)
                         continue
 
-                # 매수 조건 체크 (top_tickers에 있는 종목만)
-                if is_active_ticker:
-                    # 현재 활성 포지션 수 확인
-                    active_count = len([
-                        s for s, p in pm.portfolio["positions"].items()
-                        if p.get("quantity", 0) > 0
-                    ])
+                # 5-2) 새 1H 봉 마감 시에만 신호 체크
+                new_bar, latest_t = is_new_1h_bar(df_1h, last_1h_bar_time.get(ticker))
+                last_1h_bar_time[ticker] = latest_t
 
-                    if buy_count < MAX_BUY_COUNT:
-                        if active_count >= TOP_TICKER_LIMIT and buy_count == 0:
-                            print(f"  └ ⚠️ 최대 종목수 도달 ({TOP_TICKER_LIMIT}개)")
-                        else:
-                            signal = check_signal(df_5m, price, avg, df_1h,
-                                                  pm.get_peak_price(ticker))
-                            print(f"  └ 매매 신호: {signal}")
+                if not new_bar:
+                    if avg is None and is_active:
+                        # 신호 평가는 안 하지만 상태 표시
+                        daily_t = get_daily_trend(df_1h)
+                        print(f"  └ 1D 추세: {daily_t} (다음 1H 봉 close 대기 중)")
+                    continue
 
-                            if signal == "BUY":
-                                pm.buy(ticker, price)
+                # 신호 계산 (1H 봉 close 후)
+                signal = check_signal(df_1h, price, avg, df_1h, pm.get_peak_price(ticker))
+
+                # 5-3) 전략 매도 신호 (보유 중 + STRATEGY_SELL_ENABLED)
+                if avg and signal == "SELL" and STRATEGY_SELL_ENABLED:
+                    min_hold = MIN_HOLD_MINUTES / 60
+                    if hours < min_hold:
+                        print(f"  └ ⏳ 최소보유시간 미달 ({hours*60:.0f}분 / {MIN_HOLD_MINUTES}분 필요)")
                     else:
-                        print(f"  └ 최대 분할매수 도달 ({MAX_BUY_COUNT}회)")
+                        pm.sell_all(ticker, price, reason="전략매도")
+                        continue
 
-            # 3. 10사이클마다 전체 현황 출력
+                # 5-4) 매수 신호 (active + 미보유)
+                if is_active and avg is None and signal == "BUY":
+                    active_count = sum(
+                        1 for p in pm.portfolio["positions"].values()
+                        if p.get("quantity", 0) > 0
+                    )
+                    if active_count >= TOP_TICKER_LIMIT:
+                        print(f"  └ ⚠️ 종목 한도 도달 ({TOP_TICKER_LIMIT}종 보유 중)")
+                    else:
+                        # BTC 급락 필터
+                        btc_trend, btc_change = get_btc_trend()
+                        if btc_trend == "DOWN" and btc_change <= -3.0:
+                            print(f"  └ 🚫 BTC 급락 차단 ({btc_change:+.2f}%)")
+                        else:
+                            print(f"  └ 💡 매수 신호 → 진입")
+                            pm.buy(ticker, price)
+
+            # 6) 정기 현황 (10 사이클마다)
             if cycle % 10 == 0:
                 pm.print_status(prices)
 
-            print(f"\n  └ ⏱ {INTERVAL_SECONDS}초 후 다음 체크...")
+            print(f"\n  └ ⏱ {INTERVAL_SECONDS}초 후 다음 사이클")
             time.sleep(INTERVAL_SECONDS)
 
         except KeyboardInterrupt:
-            print("\n" + "="*55)
-            print("   시뮬레이터 종료 중...")
-            # 종료 시 전체 현황 출력
+            print("\n" + "=" * 60)
+            print("   종료 중...")
             all_tickers = get_all_active_tickers(pm, top_tickers)
             prices = {}
-            for ticker in all_tickers:
-                p = get_current_price(ticker)
+            for t in all_tickers:
+                p = get_current_price(t)
                 if p:
-                    prices[ticker] = p
+                    prices[t] = p
             pm.print_status(prices)
-            print("\n종료 완료!")
+            print("\n종료 완료.")
             break
 
         except Exception as e:
-            logging.error(f"오류 발생: {e}")
-            print(f"  └ 오류: {e}, 10초 후 재시도...")
+            logging.error(f"오류: {e}")
+            print(f"  └ 오류: {e} | 10초 후 재시도")
             time.sleep(10)
 
+
 if __name__ == "__main__":
-    run()
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "reset":
+        print("\n" + "=" * 60)
+        print("   📋 포트폴리오 초기화")
+        print("=" * 60)
+        PortfolioManager.reset_portfolio()
+    else:
+        run()

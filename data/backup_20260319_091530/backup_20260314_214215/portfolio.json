@@ -1,0 +1,28 @@
+{
+  "cash": 660576.504606869,
+  "positions": {
+    "IP": {
+      "quantity": 143.403771540756,
+      "avg_buy_price": 1159.314,
+      "total_invested": 166666.66666666666,
+      "buy_count": 1,
+      "buy_time": "2026-03-14T19:13:13.644583",
+      "last_buy_time": "2026-03-14T19:13:13.644583",
+      "peak_price": 1170.0
+    },
+    "WLD": {
+      "quantity": 319.68817663324603,
+      "avg_buy_price": 520.038,
+      "total_invested": 166666.66666666666,
+      "buy_count": 1,
+      "buy_time": "2026-03-14T21:41:26.443406",
+      "last_buy_time": "2026-03-14T21:41:26.443406",
+      "peak_price": 520.038
+    }
+  },
+  "buy_orders": 5,
+  "sell_orders": 3,
+  "closed_trades": 3,
+  "win_trades": 0,
+  "total_profit": -4840.162059797905
+}
