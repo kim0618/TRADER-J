@@ -22,9 +22,11 @@ from config import (
     TICKER_REFRESH_CYCLES,
     TIME_STOP_HOURS, TIME_STOP_THRESHOLD,
     BACKTEST_MIN_1H_BARS,
+    REGIME_ENABLED, CORE_TICKERS,
 )
 from collector import get_current_price, get_swing_data, get_smart_tickers, get_btc_trend
 from strategy import check_signal, get_atr, get_daily_trend
+from regime import get_market_regime
 from paper_trader import PortfolioManager
 
 os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
@@ -44,7 +46,7 @@ def print(*args, **kwargs):
 builtins.print = print
 
 
-def save_cycle_info(cycle, tickers, start_time=None):
+def save_cycle_info(cycle, tickers, start_time=None, regime="?"):
     """대시보드용 사이클 정보 저장"""
     import json
     os.makedirs("data", exist_ok=True)
@@ -56,7 +58,8 @@ def save_cycle_info(cycle, tickers, start_time=None):
             "last_check": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "start_time": start_time.strftime("%Y-%m-%d %H:%M:%S") if start_time else "",
             "running_hours": running_hours,
-            "strategy": "swing_v3.0",
+            "strategy": "hybrid_v4.1",
+            "regime": regime,
         }, f, ensure_ascii=False)
 
 
@@ -112,9 +115,11 @@ def check_sell_conditions(pm, symbol, price, df_1h):
             print(f"  └ 🎯 트레일링 스탑 (고점:{peak:,.0f} 현재:{price:,.0f})")
             return ("sell_all", "트레일링스탑")
 
-    # 3) ATR 동적 손절
+    # 3) ATR 동적 손절 (v4.0: 백테스트와 동일하게 4H ATR 기준)
     atr_stop = STOP_LOSS
-    atr = get_atr(df_1h)
+    from strategy import _resample_to_4h
+    df_4h = _resample_to_4h(df_1h)
+    atr = get_atr(df_4h if df_4h is not None and len(df_4h) >= 20 else df_1h)
     if atr and price > 0:
         atr_pct = -(ATR_STOP_MULTIPLIER * atr) / price
         atr_stop = max(ATR_STOP_MAX, min(ATR_STOP_MIN, atr_pct))
@@ -147,9 +152,9 @@ def get_price_with_retry(ticker, retries=3):
 
 def run():
     print("\n" + "=" * 60)
-    print("   🤖 코인 자동매매 시뮬레이터 (Swing v3.0)")
-    print(f"   1H 시그널 + 1D 추세 필터 | 최대 {TOP_TICKER_LIMIT}종 동시")
-    print(f"   주기: {INTERVAL_SECONDS}초 | 보유한도: {TICKER_REFRESH_CYCLES} 사이클마다 종목 재선정")
+    print("   🤖 코인 자동매매 시뮬레이터 (Hybrid v4.1)")
+    print(f"   레짐 UP=코어 보유({'/'.join(CORE_TICKERS)}) | DOWN=v4.0 스윙")
+    print(f"   주기: {INTERVAL_SECONDS}초 | {TICKER_REFRESH_CYCLES} 사이클마다 종목 재선정")
     print("=" * 60)
     print("   종료: Ctrl+C")
     print("=" * 60 + "\n")
@@ -166,15 +171,23 @@ def run():
             now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             print(f"\n[{now_str}] 🔄 사이클 {cycle}")
 
-            # 1) 종목 재선정 (첫 사이클 + 주기마다)
+            # 0) 시장 레짐 판단 (v4.1 하이브리드 핵심)
+            regime = get_market_regime() if REGIME_ENABLED else "DOWN"
+            regime_icon = "📈" if regime == "UP" else "📉"
+            print(f"  └ {regime_icon} 시장 레짐: {regime} "
+                  f"({'코어 보유 모드' if regime == 'UP' else 'v4.0 스윙 모드'})")
+
+            # 1) 종목 재선정 (첫 사이클 + 주기마다) - DOWN 레짐에서만 의미 있음
             if cycle == 1 or cycle % TICKER_REFRESH_CYCLES == 0:
                 top_tickers = get_smart_tickers(limit=TOP_TICKER_LIMIT)
                 print(f"  └ 신규 종목 풀: {top_tickers}")
 
-            save_cycle_info(cycle, top_tickers, START_TIME)
+            save_cycle_info(cycle, top_tickers, START_TIME, regime)
 
-            # 2) 관리 대상 종목 (보유 + 신규 후보)
+            # 2) 관리 대상 종목 (보유 + 신규 후보 + 코어)
             all_tickers = get_all_active_tickers(pm, top_tickers)
+            if REGIME_ENABLED and regime == "UP":
+                all_tickers = list(dict.fromkeys(all_tickers + CORE_TICKERS))
 
             # 3) 현재가 수집
             prices = {}
@@ -188,6 +201,24 @@ def run():
                 print(f"\n  🚨 글로벌 손절 발동, 모든 포지션 청산")
                 time.sleep(INTERVAL_SECONDS)
                 continue
+
+            # 4.5) 코어 포지션 관리 (v4.1 하이브리드)
+            #   UP:  BTC/ETH 코어 매수 (미보유 시)
+            #   DOWN: 코어 청산 → v4.0 스윙 모드로 전환
+            if REGIME_ENABLED:
+                for core in CORE_TICKERS:
+                    core_price = prices.get(core) or get_price_with_retry(core)
+                    if not core_price:
+                        continue
+                    prices[core] = core_price
+                    core_avg = pm.get_avg_buy_price(core)
+                    if regime == "UP" and core_avg is None:
+                        print(f"  └ 🏦 [{core}] 코어 매수 (레짐 UP)")
+                        pm.buy(core, core_price)
+                    elif regime == "DOWN" and core_avg is not None:
+                        profit = (core_price - core_avg) / core_avg * 100
+                        print(f"  └ 🏦 [{core}] 코어 청산 (레짐 DOWN, {profit:+.2f}%)")
+                        pm.sell_all(core, core_price, reason="레짐DOWN")
 
             # 5) 종목별 처리
             for ticker in all_tickers:
@@ -207,16 +238,24 @@ def run():
                 hours = pm.get_holding_hours(ticker)
                 tp = pm.get_dynamic_take_profit(ticker)
 
+                # v4.1: UP 레짐의 코어 포지션은 매도 규칙 면제 (레짐 전환만이 출구)
+                is_core_hold = (REGIME_ENABLED and regime == "UP"
+                                and ticker in CORE_TICKERS and avg is not None)
+
                 # 상태 출력
                 if avg:
                     profit_rate = (price - avg) / avg * 100
-                    tag = "보유 중" if is_active else "잔여 보유"
+                    tag = "🏦 코어 보유" if is_core_hold else ("보유 중" if is_active else "잔여 보유")
                     print(f"\n  ── [{ticker}] {tag} ──")
                     print(f"  └ 현재가: {price:,.0f}원 | 수익: {profit_rate:+.2f}% | "
-                          f"보유: {hours:.1f}h | 익절기준: +{tp*100:.1f}%")
+                          f"보유: {hours:.1f}h" + ("" if is_core_hold else f" | 익절기준: +{tp*100:.1f}%"))
                 else:
                     print(f"\n  ── [{ticker}] 분석 ──")
                     print(f"  └ 현재가: {price:,.0f}원")
+
+                # 코어 포지션: 레짐 전환 전까지 그대로 보유 (신호/손절 체크 스킵)
+                if is_core_hold:
+                    continue
 
                 # 5-1) 보호 손절 체크 (현재가 기준, 즉시 반응)
                 if avg:
@@ -250,7 +289,11 @@ def run():
                         continue
 
                 # 5-4) 매수 신호 (active + 미보유)
+                # v4.1: v4.0 스윙 진입은 DOWN 레짐에서만 (검증: DOWN 4건 PF 8.39 vs UP구간 PF 0.72)
                 if is_active and avg is None and signal == "BUY":
+                    if REGIME_ENABLED and regime == "UP":
+                        print(f"  └ 🚫 레짐 UP → 스윙 진입 차단 (코어 보유 모드)")
+                        continue
                     active_count = sum(
                         1 for p in pm.portfolio["positions"].values()
                         if p.get("quantity", 0) > 0
