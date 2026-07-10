@@ -247,15 +247,16 @@ class PortfolioManager:
 
         return True
 
-    def buy(self, symbol, price):
-        """매수 - 슬리피지 적용, 배분 한도 내 분할매수"""
+    def buy(self, symbol, price, alloc_cash=None):
+        """매수 - 슬리피지 적용, 배분 한도 내 분할매수
+        alloc_cash: 지정 시 종목당 기본 배분 대신 해당 금액 사용 (v4.2 코어 매수용)"""
         if not self.can_buy(symbol, current_price=price):
             return False
 
         # 슬리피지 적용 (실제 체결가)
         fill_price = self._apply_slippage(price, is_buy=True)
 
-        alloc = self.get_alloc_cash()
+        alloc = alloc_cash if alloc_cash is not None else self.get_alloc_cash()
         pos = self.portfolio["positions"].get(symbol, {})
         used = pos.get("total_invested", 0)
         remaining_alloc = alloc - used

@@ -4,13 +4,16 @@
 # 구조: 레짐 UP = BTC/ETH 코어 보유 / 레짐 DOWN = 코어 청산 + v4.0 스윙만
 # v4.0 스윙 = Ensemble AND (추세 풀백 + MACD 일치) + 4시간봉, DOWN레짐 성적 4건 PF 8.39
 
-# ── 레짐 감지 (v4.1 신설) ──────────────────────────────────────
+# ── 레짐 감지 (v4.1 신설, v4.2 코어 개편) ──────────────────────
 REGIME_ENABLED = True
 REGIME_SYMBOL = "BTC"         # 레짐 판단 기준 종목
-REGIME_EMA_SPAN = 20          # 일봉 EMA 기간
+REGIME_EMA_SPAN = 20          # 일봉 EMA 기간 (강건성 36조합 중 7위, 극단값 아님)
 REGIME_BAND = 0.01            # 히스테리시스 밴드 ±1% (휩쏘 억제)
 REGIME_CONFIRM_DAYS = 2       # UP→DOWN 전환 확인 일수
-CORE_TICKERS = ["BTC", "ETH"] # UP 레짐 코어 보유 종목
+# v4.2: ETH 제거 (140일 검증: BTC단독 +3.27% vs BTC/ETH -1.63%, ETH단독 -6.52%)
+#       BTC단독 레짐보유는 36개 파라미터 조합 중 31개(86%)가 B&H 초과 = 강건한 하락방어
+CORE_TICKERS = ["BTC"]        # UP 레짐 코어 보유 종목
+CORE_ALLOC = 0.90             # 코어 매수 시 현금의 90% 투입 (UP레짐은 스윙 차단이라 잔여현금 무용)
 
 # 초기 자금
 INITIAL_BALANCE = 1_000_000

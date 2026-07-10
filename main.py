@@ -22,7 +22,7 @@ from config import (
     TICKER_REFRESH_CYCLES,
     TIME_STOP_HOURS, TIME_STOP_THRESHOLD,
     BACKTEST_MIN_1H_BARS,
-    REGIME_ENABLED, CORE_TICKERS,
+    REGIME_ENABLED, CORE_TICKERS, CORE_ALLOC,
 )
 from collector import get_current_price, get_swing_data, get_smart_tickers, get_btc_trend
 from strategy import check_signal, get_atr, get_daily_trend
@@ -213,8 +213,9 @@ def run():
                     prices[core] = core_price
                     core_avg = pm.get_avg_buy_price(core)
                     if regime == "UP" and core_avg is None:
-                        print(f"  └ 🏦 [{core}] 코어 매수 (레짐 UP)")
-                        pm.buy(core, core_price)
+                        core_cash = pm.portfolio["cash"] * CORE_ALLOC / len(CORE_TICKERS)
+                        print(f"  └ 🏦 [{core}] 코어 매수 (레짐 UP, {core_cash:,.0f}원)")
+                        pm.buy(core, core_price, alloc_cash=core_cash)
                     elif regime == "DOWN" and core_avg is not None:
                         profit = (core_price - core_avg) / core_avg * 100
                         print(f"  └ 🏦 [{core}] 코어 청산 (레짐 DOWN, {profit:+.2f}%)")
